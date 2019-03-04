@@ -1,0 +1,44 @@
+[centos@ip-10-0-1-36 simple-java-maven-app]$ java -version
+-bash: java: command not found
+[centos@ip-10-0-1-36 simple-java-maven-app]$ javac -version
+-bash: javac: command not found
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo yum install java-1.8.0-openjdk-devel wget
+
+[centos@ip-10-0-1-36 simple-java-maven-app]$ javac -version
+javac 1.8.0_191
+[centos@ip-10-0-1-36 simple-java-maven-app]$ java -version
+openjdk version "1.8.0_191"
+OpenJDK Runtime Environment (build 1.8.0_191-b12)
+OpenJDK 64-Bit Server VM (build 25.191-b12, mixed mode)
+
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo yum install jenkins
+<to check and start Jenkins services>
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo service jenkins status
+jenkins.service - LSB: Jenkins Automation Server
+   Loaded: loaded (/etc/rc.d/init.d/jenkins; bad; vendor preset: disabled)
+   Active: inactive (dead)
+     Docs: man:systemd-sysv-generator(8)
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo service jenkins start
+Starting jenkins (via systemctl): 
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo chkconfig jenkins on
+[centos@ip-10-0-1-36 simple-java-maven-app]$ curl ident.me <TO get the IP>
+54.191.126.24[centos@ip-10-0-1-36 simple-java-maven-app]$
+
+<To access Jenkins console>
+http://<ip>:8080
+
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo cat /var/lib/jenkins/secrets/initialAdminPassword <To get the Jenkins password>
+da24f3f3e7994e43b08474d4f906f495
+
+<install artifactory>
+[centos@ip-10-0-1-36 simple-java-maven-app]$ wget https://bintray.com/jfrog/artifactory-rpms/download_file?file_path=jfrog-artifactory-oss-4.13.2.rpm -O jfrog-artifactory-oss-4.13.2.rpm
+
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo rpm -ihv jfrog-artifactory-oss-4.13.2.rpm
+
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo service artifactory restart
+http://54.191.126.24:8081/
+
+
+curl -X PUT -u u:p -T target/my-app-1.0-SNAPSHOT.jar "http://localhost:8081/artifactory/libs-release-local/my-app-1.0-SNAPSHOT.jar"

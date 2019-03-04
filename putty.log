@@ -1,0 +1,1577 @@
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2019.03.01 12:46:05 =~=~=~=~=~=~=~=~=~=~=~=
+[K[centos@ip-10-0-1-36 simple-java-maven-app]$ pwd
+/home/centos/simple-java-maven-app
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo wget -o [K[KO /etc/[K[K[K[K[K/etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenk ins.repo
+--2019-03-01 07:18:45--  http://pkg.jenkins-ci.org/redhat/jenkins.repo
+Resolving pkg.jenkins-ci.org (pkg.jenkins-ci.org)... 52.202.51.185
+Connecting to pkg.jenkins-ci.org (pkg.jenkins-ci.org)|52.202.51.185|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 71
+Saving to: ‘/etc/yum.repos.d/jenkins.repo’
+
+ 0% [                                                                                    ] 0           --.-K/s              100%[===================================================================================>] 71          --.-K/s   in 0s      
+
+2019-03-01 07:18:45 (10.3 MB/s) - ‘/etc/yum.repos.d/jenkins.repo’ saved [71/71]
+
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo yum install jenkins
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.cat.pdx.edu
+ * extras: mirrors.cat.pdx.edu
+ * updates: mirrors.cat.pdx.edu
+jenkins                                                                                               | 2.9 kB  00:00:00     
+jenkins/primary_db                                                                                    | 126 kB  00:00:00     
+Resolving Dependencies
+--> Running transaction check
+---> Package jenkins.noarch 0:2.166-1.1 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+=============================================================================================================================
+ Package                      Arch                        Version                         Repository                    Size
+=============================================================================================================================
+Installing:
+ jenkins                      noarch                      2.166-1.1                       jenkins                       73 M
+
+Transaction Summary
+=============================================================================================================================
+Install  1 Package
+
+Total download size: 73 M
+Installed size: 74 M
+Is this ok [y/d/N]: y
+Downloading packages:
+jenkins-2.166-1.1.noarch.rpm                     0% [                                      ]  0.0 B/s |    0 B  --:--:-- ETA jenkins-2.166-1.1.noarch.rpm                     0% [                                      ]  0.0 B/s | 363 kB  --:--:-- ETA jenkins-2.166-1.1.noarch.rpm                     2% [-                                     ] 1.9 MB/s | 1.6 MB  00:00:38 ETA jenkins-2.166-1.1.noarch.rpm                     3% [=                                     ] 1.9 MB/s | 2.3 MB  00:00:37 ETA jenkins-2.166-1.1.noarch.rpm                     4% [=-                                    ] 1.9 MB/s | 3.0 MB  00:00:36 ETA jenkins-2.166-1.1.noarch.rpm                     5% [=-                                    ] 1.9 MB/s | 3.8 MB  00:00:36 ETA jenkins-2.166-1.1.noarch.rpm                     6% [==                                    ] 2.0 MB/s | 4.6 MB  00:00:35 ETA jenkins-2.166-1.1.noarch.rpm                     7% [==-                                   ] 2.0 MB/s | 5.4 MB  00:00:33 ETA jenkins-2.166-1.1.noarch.rpm                     8% [===                                   ] 2.1 MB/s | 6.4 MB  00:00:32 ETA jenkins-2.166-1.1.noarch.rpm                    10% [===-                                  ] 2.2 MB/s | 7.5 MB  00:00:30 ETA jenkins-2.166-1.1.noarch.rpm                    12% [====-                                 ] 2.3 MB/s | 8.9 MB  00:00:28 ETA jenkins-2.166-1.1.noarch.rpm                    14% [=====                                 ] 2.4 MB/s |  10 MB  00:00:25 ETA jenkins-2.166-1.1.noarch.rpm                    16% [======                                ] 2.6 MB/s |  12 MB  00:00:23 ETA jenkins-2.166-1.1.noarch.rpm                    19% [=======                               ] 2.9 MB/s |  14 MB  00:00:20 ETA jenkins-2.166-1.1.noarch.rpm                    22% [========-                             ] 3.2 MB/s |  17 MB  00:00:17 ETA jenkins-2.166-1.1.noarch.rpm                    26% [==========                            ] 3.5 MB/s |  19 MB  00:00:15 ETA jenkins-2.166-1.1.noarch.rpm                    30% [===========-                          ] 3.9 MB/s |  23 MB  00:00:12 ETA jenkins-2.166-1.1.noarch.rpm                    34% [=============                         ] 4.2 MB/s |  25 MB  00:00:11 ETA jenkins-2.166-1.1.noarch.rpm                    36% [==============                        ] 4.3 MB/s |  27 MB  00:00:10 ETA jenkins-2.166-1.1.noarch.rpm                    39% [==============-                       ] 4.4 MB/s |  29 MB  00:00:10 ETA jenkins-2.166-1.1.noarch.rpm                    41% [===============-                      ] 4.4 MB/s |  31 MB  00:00:09 ETA jenkins-2.166-1.1.noarch.rpm                    44% [================-                     ] 4.5 MB/s |  33 MB  00:00:08 ETA jenkins-2.166-1.1.noarch.rpm                    47% [=================-                    ] 4.6 MB/s |  35 MB  00:00:08 ETA jenkins-2.166-1.1.noarch.rpm                    50% [===================                   ] 4.8 MB/s |  37 MB  00:00:07 ETA jenkins-2.166-1.1.noarch.rpm                    53% [====================                  ] 4.9 MB/s |  39 MB  00:00:06 ETA jenkins-2.166-1.1.noarch.rpm                    57% [=====================-                ] 5.1 MB/s |  42 MB  00:00:06 ETA jenkins-2.166-1.1.noarch.rpm                    61% [=======================               ] 5.4 MB/s |  45 MB  00:00:05 ETA jenkins-2.166-1.1.noarch.rpm                    65% [========================-             ] 5.7 MB/s |  48 MB  00:00:04 ETA jenkins-2.166-1.1.noarch.rpm                    70% [==========================-           ] 6.0 MB/s |  52 MB  00:00:03 ETA jenkins-2.166-1.1.noarch.rpm                    75% [============================-         ] 6.4 MB/s |  56 MB  00:00:02 ETA jenkins-2.166-1.1.noarch.rpm                    81% [===============================       ] 6.9 MB/s |  60 MB  00:00:01 ETA jenkins-2.166-1.1.noarch.rpm                    87% [=================================     ] 7.3 MB/s |  65 MB  00:00:01 ETA jenkins-2.166-1.1.noarch.rpm                    92% [===================================   ] 7.5 MB/s |  68 MB  00:00:00 ETA jenkins-2.166-1.1.noarch.rpm                    96% [====================================- ] 7.6 MB/s |  71 MB  00:00:00 ETA jenkins-2.166-1.1.noarch.rpm                    99% [=====================================-] 7.6 MB/s |  73 MB  00:00:00 ETA jenkins-2.166-1.1.noarch.rpm                                                                          |  73 MB  00:00:12     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : jenkins-2.166-1.1.noarch [                                                                              ] 1/1  Installing : jenkins-2.166-1.1.noarch [#                                                                             ] 1/1  Installing : jenkins-2.166-1.1.noarch [##                                                                            ] 1/1  Installing : jenkins-2.166-1.1.noarch [###                                                                           ] 1/1  Installing : jenkins-2.166-1.1.noarch [####                                                                          ] 1/1  Installing : jenkins-2.166-1.1.noarch [#####                                                                         ] 1/1  Installing : jenkins-2.166-1.1.noarch [######                                                                        ] 1/1  Installing : jenkins-2.166-1.1.noarch [#######                                                                       ] 1/1  Installing : jenkins-2.166-1.1.noarch [########                                                                      ] 1/1  Installing : jenkins-2.166-1.1.noarch [#########                                                                     ] 1/1  Installing : jenkins-2.166-1.1.noarch [##########                                                                    ] 1/1  Installing : jenkins-2.166-1.1.noarch [###########                                                                   ] 1/1  Installing : jenkins-2.166-1.1.noarch [############                                                                  ] 1/1  Installing : jenkins-2.166-1.1.noarch [#############                                                                 ] 1/1  Installing : jenkins-2.166-1.1.noarch [##############                                                                ] 1/1  Installing : jenkins-2.166-1.1.noarch [###############                                                               ] 1/1  Installing : jenkins-2.166-1.1.noarch [################                                                              ] 1/1  Installing : jenkins-2.166-1.1.noarch [#################                                                             ] 1/1  Installing : jenkins-2.166-1.1.noarch [##################                                                            ] 1/1  Installing : jenkins-2.166-1.1.noarch [###################                                                           ] 1/1  Installing : jenkins-2.166-1.1.noarch [####################                                                          ] 1/1  Installing : jenkins-2.166-1.1.noarch [#####################                                                         ] 1/1  Installing : jenkins-2.166-1.1.noarch [######################                                                        ] 1/1  Installing : jenkins-2.166-1.1.noarch [#######################                                                       ] 1/1  Installing : jenkins-2.166-1.1.noarch [########################                                                      ] 1/1  Installing : jenkins-2.166-1.1.noarch [#########################                                                     ] 1/1  Installing : jenkins-2.166-1.1.noarch [##########################                                                    ] 1/1  Installing : jenkins-2.166-1.1.noarch [###########################                                                   ] 1/1  Installing : jenkins-2.166-1.1.noarch [############################                                                  ] 1/1  Installing : jenkins-2.166-1.1.noarch [#############################                                                 ] 1/1  Installing : jenkins-2.166-1.1.noarch [##############################                                                ] 1/1  Installing : jenkins-2.166-1.1.noarch [###############################                                               ] 1/1  Installing : jenkins-2.166-1.1.noarch [################################                                              ] 1/1  Installing : jenkins-2.166-1.1.noarch [#################################                                             ] 1/1  Installing : jenkins-2.166-1.1.noarch [##################################                                            ] 1/1  Installing : jenkins-2.166-1.1.noarch [###################################                                           ] 1/1  Installing : jenkins-2.166-1.1.noarch [####################################                                          ] 1/1  Installing : jenkins-2.166-1.1.noarch [#####################################                                         ] 1/1  Installing : jenkins-2.166-1.1.noarch [######################################                                        ] 1/1  Installing : jenkins-2.166-1.1.noarch [#######################################                                       ] 1/1  Installing : jenkins-2.166-1.1.noarch [########################################                                      ] 1/1  Installing : jenkins-2.166-1.1.noarch [#########################################                                     ] 1/1  Installing : jenkins-2.166-1.1.noarch [##########################################                                    ] 1/1  Installing : jenkins-2.166-1.1.noarch [###########################################                                   ] 1/1  Installing : jenkins-2.166-1.1.noarch [############################################                                  ] 1/1  Installing : jenkins-2.166-1.1.noarch [#############################################                                 ] 1/1  Installing : jenkins-2.166-1.1.noarch [##############################################                                ] 1/1  Installing : jenkins-2.166-1.1.noarch [###############################################                               ] 1/1  Installing : jenkins-2.166-1.1.noarch [################################################                              ] 1/1  Installing : jenkins-2.166-1.1.noarch [#################################################                             ] 1/1  Installing : jenkins-2.166-1.1.noarch [##################################################                            ] 1/1  Installing : jenkins-2.166-1.1.noarch [###################################################                           ] 1/1  Installing : jenkins-2.166-1.1.noarch [####################################################                          ] 1/1  Installing : jenkins-2.166-1.1.noarch [#####################################################                         ] 1/1  Installing : jenkins-2.166-1.1.noarch [######################################################                        ] 1/1  Installing : jenkins-2.166-1.1.noarch [#######################################################                       ] 1/1  Installing : jenkins-2.166-1.1.noarch [########################################################                      ] 1/1  Installing : jenkins-2.166-1.1.noarch [#########################################################                     ] 1/1  Installing : jenkins-2.166-1.1.noarch [##########################################################                    ] 1/1  Installing : jenkins-2.166-1.1.noarch [###########################################################                   ] 1/1  Installing : jenkins-2.166-1.1.noarch [############################################################                  ] 1/1  Installing : jenkins-2.166-1.1.noarch [#############################################################                 ] 1/1  Installing : jenkins-2.166-1.1.noarch [##############################################################                ] 1/1  Installing : jenkins-2.166-1.1.noarch [###############################################################               ] 1/1  Installing : jenkins-2.166-1.1.noarch [################################################################              ] 1/1  Installing : jenkins-2.166-1.1.noarch [#################################################################             ] 1/1  Installing : jenkins-2.166-1.1.noarch [##################################################################            ] 1/1  Installing : jenkins-2.166-1.1.noarch [###################################################################           ] 1/1  Installing : jenkins-2.166-1.1.noarch [####################################################################          ] 1/1  Installing : jenkins-2.166-1.1.noarch [#####################################################################         ] 1/1  Installing : jenkins-2.166-1.1.noarch [######################################################################        ] 1/1  Installing : jenkins-2.166-1.1.noarch [#######################################################################       ] 1/1  Installing : jenkins-2.166-1.1.noarch [########################################################################      ] 1/1  Installing : jenkins-2.166-1.1.noarch [#########################################################################     ] 1/1  Installing : jenkins-2.166-1.1.noarch [##########################################################################    ] 1/1  Installing : jenkins-2.166-1.1.noarch [###########################################################################   ] 1/1  Installing : jenkins-2.166-1.1.noarch [############################################################################  ] 1/1  Installing : jenkins-2.166-1.1.noarch [############################################################################# ] 1/1  Installing : jenkins-2.166-1.1.noarch                                                                                  1/1 
+  Verifying  : jenkins-2.166-1.1.noarch                                                                                  1/1 
+
+Installed:
+  jenkins.noarch 0:2.166-1.1                                                                                                 
+
+Complete!
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo service jenkins statis[K[Kus
+● jenkins.service - LSB: Jenkins Automation Server
+   Loaded: loaded (/etc/rc.d/init.d/jenkins; bad; vendor preset: disabled)
+   Active: inactive (dead)
+     Docs: man:systemd-sysv-generator(8)
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo service jenkins start
+Starting jenkins (via systemctl):  [60G[[0;32m  OK  [0;39m]
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo service jenkins starttus
+[1;32m●[0m jenkins.service - LSB: Jenkins Automation Server
+   Loaded: loaded (/etc/rc.d/init.d/jenkins; bad; vendor preset: disabled)
+   Active: [1;32mactive (running)[0m since Fri 2019-03-01 07:22:01 UTC; 28s ago
+     Docs: man:systemd-sysv-generator(8)
+  Process: 23628 ExecStart=/etc/rc.d/init.d/jenkins start (code=exited, status=0/SUCCESS)
+   CGroup: /system.slice/jenkins.service
+           └─23649 /etc/alternatives/java -Dcom.sun.akuma.Daemon=daemonized -Djava.awt.headless=true -DJENKINS_HOME=/var/l...
+
+Mar 01 07:22:00 ip-10-0-1-36.us-west-2.compute.internal systemd[1]: Starting LSB: Jenkins Automation Server...
+Mar 01 07:22:00 ip-10-0-1-36.us-west-2.compute.internal runuser[23633]: pam_unix(runuser:session): session opened for u...=0)
+Mar 01 07:22:01 ip-10-0-1-36.us-west-2.compute.internal jenkins[23628]: Starting Jenkins [  OK  ]
+Mar 01 07:22:01 ip-10-0-1-36.us-west-2.compute.internal systemd[1]: Started LSB: Jenkins Automation Server.
+Hint: Some lines were ellipsized, use -l to show in full.
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo chkconfig jenkins n[Kon
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ id nt
+id: nt: no such user
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ id nt[Kident.ne
+-bash: ident.ne: command not found
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ ip addr
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc mq state UP group default qlen 1000
+    link/ether 06:c9:3d:ee:a0:a4 brd ff:ff:ff:ff:ff:ff
+    inet 10.0.1.36/24 brd 10.0.1.255 scope global dynamic eth0
+       valid_lft 3264sec preferred_lft 3264sec
+    inet6 fe80::4c9:3dff:feee:a0a4/64 scope link 
+       valid_lft forever preferred_lft forever
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ curl idnet.me
+curl: (6) Could not resolve host: idnet.me; Unknown error
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ curl idnet.meenet.me[C[1Pt.me
+54.191.126.24]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo cat /var`[K/l
+lib/   local/ lock/  log/   
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo cat /var/lib/jenkins/
+config.xml                           jobs/                                secret.key
+hudson.model.UpdateCenter.xml        .lastStarted                         secret.key.not-so-secret
+identity.key.enc                     logs/                                secrets/
+.java/                               nodeMonitors.xml                     updates/
+jenkins.install.UpgradeWizard.state  nodes/                               userContent/
+jenkins.telemetry.Correlator.xml     plugins/                             users/
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo cat /var/lib/jenkins/secrets/init[K[K[K[K[K/[K[K
+secret.key                secret.key.not-so-secret  secrets/                  
+[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo cat /var/lib/jenkins/secrets/
+cat: /var/lib/jenkins/secrets/: Is a directory
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo xca[K[K[Kcat /var/lib/jenkins/secrets/initialAdminPassword
+da24f3f3e7994e43b08474d4f906f495
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ cd /usr/bin/j
+jar          javac        javap        jdb          jinfo        jobs         jps          jsonpointer  jstatd
+jarsigner    javadoc      jcmd         jdeps        jjs          join         jrunscript   jstack       jvmjar
+java         javah        jconsole     jhat         jmap         journalctl   jsadebugd    jstat        
+[centos@ip-10-0-1-36 simple-java-maven-app]$ cd /usr/bin/j
+jar          javac        javap        jdb          jinfo        jobs         jps          jsonpointer  jstatd
+jarsigner    javadoc      jcmd         jdeps        jjs          join         jrunscript   jstack       jvmjar
+java         javah        jconsole     jhat         jmap         journalctl   jsadebugd    jstat        
+[centos@ip-10-0-1-36 simple-java-maven-app]$ cd /usr/bin/java
+-bash: cd: /usr/bin/java: Not a directory
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ cd /usr/bin/java[K[K[K[K
+]0;centos@ip-10-0-1-36:/usr/bin[centos@ip-10-0-1-36 bin]$ cd java
+-bash: cd: java: Not a directory
+]0;centos@ip-10-0-1-36:/usr/bin[centos@ip-10-0-1-36 bin]$ ls -rlt
+total 69040
+-rwxr-xr-x.   1 root root     11004 Jun  9  2014 [0m[01;32mpod2text[0m
+-rwxr-xr-x.   1 root root     13581 Jun  9  2014 [01;32mpod2man[0m
+-rwxr-xr-x.   1 root root       271 Jun  9  2014 [01;32mneqn[0m
+-rwxr-xr-x.   1 root root      3392 Jun  9  2014 [01;32mnroff[0m
+-rwxr-xr-x.   1 root root    525272 Jun  9  2014 [01;32mtroff[0m
+-rwxr-xr-x.   1 root root    118744 Jun  9  2014 [01;32mtbl[0m
+-rwxr-xr-x.   1 root root     33368 Jun  9  2014 [01;32msoelim[0m
+-rwxr-xr-x.   1 root root     88312 Jun  9  2014 [01;32mpre-grohtml[0m
+-rwxr-xr-x.   1 root root     41864 Jun  9  2014 [01;32mpreconv[0m
+-rwxr-xr-x.   1 root root    192048 Jun  9  2014 [01;32mpost-grohtml[0m
+-rwxr-xr-x.   1 root root    184736 Jun  9  2014 [01;32mpic[0m
+-rwxr-xr-x.   1 root root    100952 Jun  9  2014 [01;32mgrotty[0m
+-rwxr-xr-x.   1 root root    144232 Jun  9  2014 [01;32mgrops[0m
+-rwxr-xr-x.   1 root root     83584 Jun  9  2014 [01;32mgroff[0m
+-rwxr-xr-x.   1 root root    147880 Jun  9  2014 [01;32meqn[0m
+-rwxr-xr-x.   1 root root     30488 Jun  9  2014 [01;32mtestgdbm[0m
+-rwxr-xr-x.   1 root root     15768 Jun  9  2014 [01;32mhostname[0m
+-rwxr-xr-x.   1 root root     45448 Jun  9  2014 [01;32mpkg-config[0m
+-rwxr-xr-x.   1 root root     27960 Jun  9  2014 [01;32mpkla-check-authorization[0m
+-rwxr-xr-x.   1 root root     19688 Jun  9  2014 [01;32mpkla-admin-identities[0m
+-rwxr-xr-x.   1 root root      2086 Jun  9  2014 [01;32mrun-parts[0m
+-r-xr-sr-x.   1 root tty      15344 Jun  9  2014 [30;43mwall[0m
+-rwxr-xr-x.   1 root root     11240 Jun  9  2014 [01;32mmesg[0m
+-rwxr-xr-x.   1 root root     19568 Jun  9  2014 [01;32mlast[0m
+-rwxr-xr-x.   1 root root     76016 Jun 10  2014 [01;32msed[0m
+-rwxr-xr-x.   1 root root     28608 Jun 10  2014 [01;32mkeyctl[0m
+-rwxr-xr-x.   1 root root     24336 Jun 10  2014 [01;32mwhich[0m
+-rwxr-xr-x.   1 root root      8177 Jun 10  2014 [01;32mpiconv[0m
+-rwxr-xr-x.   1 root root     96760 Jun 10  2014 [01;32mdbus-binding-tool[0m
+-rwxr-xr-x.   1 root root     24056 Jun 10  2014 [01;32mxsltproc[0m
+-rwsr-xr-x.   1 root root     27832 Jun 10  2014 [37;41mpasswd[0m
+-rwxr-xr-x.   1 root root     49528 Jun 10  2014 [01;32msdiff[0m
+-rwxr-xr-x.   1 root root     62072 Jun 10  2014 [01;32mdiff3[0m
+-rwxr-xr-x.   1 root root    200104 Jun 10  2014 [01;32mdiff[0m
+-rwxr-xr-x.   1 root root     45184 Jun 10  2014 [01;32mcmp[0m
+-rwxr-xr-x.   1 root root     28504 Jun 10  2014 [01;32mwhiptail[0m
+-rwxr-xr-x.   1 root root       203 Jun 10  2014 [01;32mperldoc[0m
+-rwxr-xr-x.   1 root root     23736 Jun 10  2014 [01;32mgpg-error[0m
+-rwxr-xr-x.   1 root root      3755 Jun 10  2014 [01;32mpod2usage[0m
+-rwxr-xr-x.   1 root root       307 Jul 22  2015 [01;32mchardetect[0m
+-rwxr-xr-x.   1 root root      2291 Jul 30  2015 [01;32mlesspipe.sh[0m
+-rwxr-xr-x.   1 root root     17056 Jul 30  2015 [01;32mlesskey[0m
+-rwxr-xr-x.   1 root root     11376 Jul 30  2015 [01;32mlessecho[0m
+-rwxr-xr-x.   1 root root    158240 Jul 30  2015 [01;32mless[0m
+-rwxr-xr-x.   1 root root      1340 Nov 20  2015 [01;32mjsonpointer[0m
+-rwxr-xr-x.   1 root root     56240 Nov 20  2015 [01;32msqlite3[0m
+-rwxr-xr-x.   1 root root    101416 Nov 20  2015 [01;32mttmkfdir[0m
+-rwxr-xr-x.   1 root root      1063 Nov 20  2015 [01;32mxmvn-builddep[0m
+-rwxr-xr-x.   1 root root      1803 Nov 20  2015 [01;32mrebuild-jar-repository[0m
+-rwxr-xr-x.   1 root root      1737 Nov 20  2015 [01;32mjvmjar[0m
+-rwxr-xr-x.   1 root root       748 Nov 20  2015 [01;32mfind-jar[0m
+-rwxr-xr-x.   1 root root      1236 Nov 20  2015 [01;32mdiff-jars[0m
+-rwxr-xr-x.   1 root root      4657 Nov 20  2015 [01;32mcreate-jar-links[0m
+-rwxr-xr-x.   1 root root     13220 Nov 20  2015 [01;32mclean-binary-files[0m
+-rwxr-xr-x.   1 root root      3328 Nov 20  2015 [01;32mcheck-binary-files[0m
+-rwxr-xr-x.   1 root root      1571 Nov 20  2015 [01;32mbuild-jar-repository[0m
+-rwxr-xr-x.   1 root root       383 Nov 20  2015 [01;32mbuild-classpath-directory[0m
+-rwxr-xr-x.   1 root root      1537 Nov 20  2015 [01;32mbuild-classpath[0m
+-rwxr-xr-x.   1 root root      1661 Nov 20  2015 [01;32mabs2rel[0m
+-rwxr-xr-x.   1 root root     33232 Nov 21  2015 [01;32midn[0m
+-rwxr-xr-x.   1 root root     63408 Jun 23  2016 [01;32mxmllint[0m
+-rwxr-xr-x.   1 root root     19752 Jun 23  2016 [01;32mxmlcatalog[0m
+-rwxr-xr-x.   1 root root      2602 Nov  4  2016 [01;32mpinentry[0m
+-rwxr-xr-x.   1 root root      2161 Nov  5  2016 [01;32mxzmore[0m
+-rwxr-xr-x.   1 root root      1802 Nov  5  2016 [01;32mxzless[0m
+-rwxr-xr-x.   1 root root      5628 Nov  5  2016 [01;32mxzgrep[0m
+-rwxr-xr-x.   1 root root      6632 Nov  5  2016 [01;32mxzdiff[0m
+-rwxr-xr-x.   1 root root     11472 Nov  5  2016 [01;32mxzdec[0m
+-rwxr-xr-x.   1 root root     75280 Nov  5  2016 [01;32mxz[0m
+-rwxr-xr-x.   1 root root     50368 Nov  5  2016 [01;32mpinentry-curses[0m
+-rwxr-xr-x.   1 root root     24168 Nov  5  2016 [01;32mndptool[0m
+-rwxr-xr-x.   1 root root       229 Nov  5  2016 [01;32mwithsctp[0m
+-rwxr-xr-x.   1 root root     32544 Nov  5  2016 [01;32msctp_test[0m
+-rwxr-xr-x.   1 root root     24240 Nov  5  2016 [01;32msctp_status[0m
+-rwxr-xr-x.   1 root root     45616 Nov  5  2016 [01;32msctp_darn[0m
+-rwxr-xr-x.   1 root root      7168 Nov  5  2016 [01;32mchecksctp[0m
+-rwxr-xr-x.   1 root root      3891 Nov  5  2016 [01;32mptaskset[0m
+-rwxr-xr-x.   1 root root      4024 Nov  5  2016 [01;32mpchrt[0m
+-rwxr-xr-x.   1 root root    182776 Nov  5  2016 [01;32mmake[0m
+-rwxr-xr-x.   1 root root    121888 Nov  6  2016 [01;32mluac[0m
+-rwxr-xr-x.   1 root root     15840 Nov  6  2016 [01;32mlua[0m
+-rwxr-xr-x.   1 root root      5643 Nov  6  2016 [01;32mos-prober[0m
+-rwxr-xr-x.   1 root root      5995 Nov  6  2016 [01;32mlinux-boot-prober[0m
+-rwxr-xr-x.   1 root root     24568 Nov 28  2016 [01;32mxmlwf[0m
+-rwxr-xr-x.   1 root root     12751 Mar 15  2017 [01;32mmsghack[0m
+-rwxr-xr-x.   1 root root     23289 Mar 17  2017 [01;32mbond2team[0m
+-rwxr-xr-x.   1 root root      3188 Jun 28  2017 [01;32migawk[0m
+-rwxr-xr-x.   1 root root    428672 Jun 28  2017 [01;32mpgawk[0m
+-rwxr-xr-x.   1 root root    428584 Jun 28  2017 [01;32mgawk[0m
+-rwxr-xr-x.   1 root root    514168 Jun 28  2017 [01;32mdgawk[0m
+-rwxr-xr-x.   1 root root       328 Aug  2  2017 [01;32measy_install-2.7[0m
+-rwxr-xr-x.   1 root root       320 Aug  2  2017 [01;32measy_install[0m
+-rwxr-xr-x.   1 root root     11576 Aug  2  2017 [01;32mfipshmac[0m
+-rwxr-xr-x.   1 root root     15736 Aug  2  2017 [01;32mfipscheck[0m
+-rwxr-xr-x.   1 root root      4629 Aug  3  2017 [01;32mgettext.sh[0m
+-rwxr-xr-x.   1 root root    271784 Aug  3  2017 [01;32mxgettext[0m
+-rwxr-xr-x.   1 root root     15648 Aug  3  2017 [01;32mrecode-sr-latin[0m
+-rwxr-xr-x.   1 root root     36816 Aug  3  2017 [01;32mngettext[0m
+-rwxr-xr-x.   1 root root     19776 Aug  3  2017 [01;32mmsguniq[0m
+-rwxr-xr-x.   1 root root     32448 Aug  3  2017 [01;32mmsgunfmt[0m
+-rwxr-xr-x.   1 root root     53848 Aug  3  2017 [01;32mmsgmerge[0m
+-rwxr-xr-x.   1 root root     45440 Aug  3  2017 [01;32mmsginit[0m
+-rwxr-xr-x.   1 root root     36816 Aug  3  2017 [01;32mmsggrep[0m
+-rwxr-xr-x.   1 root root     78984 Aug  3  2017 [01;32mmsgfmt[0m
+-rwxr-xr-x.   1 root root     28224 Aug  3  2017 [01;32mmsgfilter[0m
+-rwxr-xr-x.   1 root root     15696 Aug  3  2017 [01;32mmsgexec[0m
+-rwxr-xr-x.   1 root root     19752 Aug  3  2017 [01;32mmsgen[0m
+-rwxr-xr-x.   1 root root     19760 Aug  3  2017 [01;32mmsgconv[0m
+-rwxr-xr-x.   1 root root     23872 Aug  3  2017 [01;32mmsgcomm[0m
+-rwxr-xr-x.   1 root root     24144 Aug  3  2017 [01;32mmsgcmp[0m
+-rwxr-xr-x.   1 root root     23880 Aug  3  2017 [01;32mmsgcat[0m
+-rwxr-xr-x.   1 root root     23920 Aug  3  2017 [01;32mmsgattrib[0m
+-rwxr-xr-x.   1 root root     36800 Aug  3  2017 [01;32mgettext[0m
+-rwxr-xr-x.   1 root root     36872 Aug  3  2017 [01;32menvsubst[0m
+-rwxr-xr-x.   1 root root       290 Aug  3  2017 [01;32mfgrep[0m
+-rwxr-xr-x.   1 root root       290 Aug  3  2017 [01;32megrep[0m
+-rwxr-xr-x.   1 root root    159024 Aug  3  2017 [01;32mgrep[0m
+-rwxr-xr-x.   1 root root     26090 Aug  3  2017 [01;32mminiterm.py[0m
+-rwxr-xr-x.   1 root root      7200 Aug  3  2017 [01;32mnl-util-addr[0m
+-rwxr-xr-x.   1 root root     11808 Aug  3  2017 [01;32mnl-tctree-list[0m
+-rwxr-xr-x.   1 root root     11568 Aug  3  2017 [01;32mnl-rule-list[0m
+-rwxr-xr-x.   1 root root     12056 Aug  3  2017 [01;32mnl-route-list[0m
+-rwxr-xr-x.   1 root root     11448 Aug  3  2017 [01;32mnl-route-get[0m
+-rwxr-xr-x.   1 root root     16240 Aug  3  2017 [01;32mnl-route-delete[0m
+-rwxr-xr-x.   1 root root     12016 Aug  3  2017 [01;32mnl-route-add[0m
+-rwxr-xr-x.   2 root root     11904 Aug  3  2017 [01;32mnl-qdisc-list[0m
+-rwxr-xr-x.   2 root root     11816 Aug  3  2017 [01;32mnl-qdisc-delete[0m
+-rwxr-xr-x.   2 root root     11880 Aug  3  2017 [01;32mnl-qdisc-add[0m
+-rwxr-xr-x.   2 root root     11632 Aug  3  2017 [01;32mnl-pktloc-lookup[0m
+-rwxr-xr-x.   1 root root     11536 Aug  3  2017 [01;32mnl-neightbl-list[0m
+-rwxr-xr-x.   1 root root     11736 Aug  3  2017 [01;32mnl-neigh-list[0m
+-rwxr-xr-x.   1 root root     11848 Aug  3  2017 [01;32mnl-neigh-delete[0m
+-rwxr-xr-x.   1 root root     11784 Aug  3  2017 [01;32mnl-neigh-add[0m
+-rwxr-xr-x.   1 root root     11464 Aug  3  2017 [01;32mnl-monitor[0m
+-rwxr-xr-x.   1 root root      7232 Aug  3  2017 [01;32mnl-list-sockets[0m
+-rwxr-xr-x.   1 root root     11344 Aug  3  2017 [01;32mnl-list-caches[0m
+-rwxr-xr-x.   1 root root     11664 Aug  3  2017 [01;32mnl-link-stats[0m
+-rwxr-xr-x.   1 root root     11920 Aug  3  2017 [01;32mnl-link-set[0m
+-rwxr-xr-x.   1 root root      7216 Aug  3  2017 [01;32mnl-link-release[0m
+-rwxr-xr-x.   1 root root      7216 Aug  3  2017 [01;32mnl-link-name2ifindex[0m
+-rwxr-xr-x.   2 root root     11800 Aug  3  2017 [01;32mnl-link-list[0m
+-rwxr-xr-x.   1 root root      7232 Aug  3  2017 [01;32mnl-link-ifindex2name[0m
+-rwxr-xr-x.   1 root root      7216 Aug  3  2017 [01;32mnl-link-enslave[0m
+-rwxr-xr-x.   1 root root     11688 Aug  3  2017 [01;32mnl-fib-lookup[0m
+-rwxr-xr-x.   2 root root     11856 Aug  3  2017 [01;32mnl-cls-list[0m
+-rwxr-xr-x.   2 root root     11960 Aug  3  2017 [01;32mnl-cls-delete[0m
+-rwxr-xr-x.   2 root root     12040 Aug  3  2017 [01;32mnl-cls-add[0m
+-rwxr-xr-x.   2 root root     11752 Aug  3  2017 [01;32mnl-class-list[0m
+-rwxr-xr-x.   2 root root     11560 Aug  3  2017 [01;32mnl-classid-lookup[0m
+-rwxr-xr-x.   2 root root     11824 Aug  3  2017 [01;32mnl-class-delete[0m
+-rwxr-xr-x.   2 root root     11976 Aug  3  2017 [01;32mnl-class-add[0m
+-rwxr-xr-x.   1 root root     16256 Aug  3  2017 [01;32mnl-addr-list[0m
+-rwxr-xr-x.   1 root root     12016 Aug  3  2017 [01;32mnl-addr-delete[0m
+-rwxr-xr-x.   1 root root     11928 Aug  3  2017 [01;32mnl-addr-add[0m
+-rwxr-xr-x.   1 root root     11544 Aug  3  2017 [01;32mnf-queue[0m
+-rwxr-xr-x.   1 root root     11448 Aug  3  2017 [01;32mnf-monitor[0m
+-rwxr-xr-x.   1 root root     11504 Aug  3  2017 [01;32mnf-log[0m
+-rwxr-xr-x.   1 root root     12088 Aug  3  2017 [01;32mnf-exp-list[0m
+-rwxr-xr-x.   1 root root     16376 Aug  3  2017 [01;32mnf-exp-delete[0m
+-rwxr-xr-x.   1 root root     16600 Aug  3  2017 [01;32mnf-exp-add[0m
+-rwxr-xr-x.   1 root root     16216 Aug  3  2017 [01;32mnf-ct-list[0m
+-rwxr-xr-x.   1 root root     12088 Aug  3  2017 [01;32mnf-ct-add[0m
+-rwxr-xr-x.   1 root root     11608 Aug  3  2017 [01;32midiag-socket-details[0m
+-rwxr-xr-x.   2 root root     11544 Aug  3  2017 [01;32mgenl-ctrl-list[0m
+-rwxr-xr-x.   1 root root     21428 Aug  3  2017 [01;32mgrowpart[0m
+-rwxr-xr-x.   1 root root     15408 Aug  4  2017 [01;32mtracepath6[0m
+-rwxr-xr-x.   1 root root     15408 Aug  4  2017 [01;32mtracepath[0m
+-rwxr-xr-x.   1 root root     66176 Aug  4  2017 [30;41mping[0m
+-rwxr-xr-x.   1 root root    183376 Aug  4  2017 [01;32mtrust[0m
+-rwxr-xr-x.   1 root root     32952 Aug  4  2017 [01;32mp11-kit[0m
+-rwxr-xr-x.   1 root root     20072 Sep  6  2017 [01;32mtset[0m
+-rwxr-xr-x.   1 root root     15784 Sep  6  2017 [01;32mtput[0m
+-rwxr-xr-x.   1 root root     15800 Sep  6  2017 [01;32mtoe[0m
+-rwxr-xr-x.   1 root root     65800 Sep  6  2017 [01;32mtic[0m
+-rwxr-xr-x.   1 root root     15680 Sep  6  2017 [01;32mtabs[0m
+-rwxr-xr-x.   1 root root     57416 Sep  6  2017 [01;32minfocmp[0m
+-rwxr-xr-x.   1 root root      7192 Sep  6  2017 [01;32mclear[0m
+-rwxr-xr-x.   1 root root      1781 Mar 27  2018 [01;32mcloud-init-per[0m
+-rwxr-xr-x.   1 root root    145960 Apr 10  2018 [01;32mcpio[0m
+-rwxr-xr-x.   1 root root      5343 Apr 11  2018 [01;32mznew[0m
+-rwxr-xr-x.   1 root root      2859 Apr 11  2018 [01;32mzmore[0m
+-rwxr-xr-x.   1 root root      2041 Apr 11  2018 [01;32mzless[0m
+-rwxr-xr-x.   1 root root      6132 Apr 11  2018 [01;32mzgrep[0m
+-rwxr-xr-x.   1 root root      2144 Apr 11  2018 [01;32mzforce[0m
+-rwxr-xr-x.   1 root root       123 Apr 11  2018 [01;32mzfgrep[0m
+-rwxr-xr-x.   1 root root       123 Apr 11  2018 [01;32mzegrep[0m
+-rwxr-xr-x.   1 root root      5768 Apr 11  2018 [01;32mzdiff[0m
+-rwxr-xr-x.   1 root root      1760 Apr 11  2018 [01;32mzcmp[0m
+-rwxr-xr-x.   1 root root      1941 Apr 11  2018 [01;32mzcat[0m
+-rwxr-xr-x.   1 root root    100800 Apr 11  2018 [01;32mgzip[0m
+-rwxr-xr-x.   1 root root      5931 Apr 11  2018 [01;32mgzexe[0m
+-rwxr-xr-x.   1 root root      2253 Apr 11  2018 [01;32mgunzip[0m
+-rwxr-xr-x.   1 root root     54080 Apr 11  2018 [01;32mupdate-mime-database[0m
+-rwxr-xr-x.   1 root root     37616 Apr 11  2018 [01;32msetfacl[0m
+-rwxr-xr-x.   1 root root     24872 Apr 11  2018 [01;32mgetfacl[0m
+-rwxr-xr-x.   1 root root     15640 Apr 11  2018 [01;32mchacl[0m
+-rwxr-xr-x.   1 root root    124360 Apr 11  2018 [01;32mlz4c[0m
+-rwxr-xr-x.   1 root root    124360 Apr 11  2018 [01;32mlz4[0m
+-rwxr-xr-x.   1 root root     21984 Apr 11  2018 [01;32minfokey[0m
+-rwxr-xr-x.   1 root root    271552 Apr 11  2018 [01;32minfo[0m
+-rwxr-xr-x.   1 root root    495840 Apr 11  2018 [01;32mrsync[0m
+-rwxr-xr-x.   1 root root     11392 Apr 11  2018 [01;32mpwscore[0m
+-rwxr-xr-x.   1 root root     11392 Apr 11  2018 [01;32mpwmake[0m
+-rwxr-xr-x.   1 root root     10469 Apr 11  2018 [01;32mssh-copy-id[0m
+-rwxr-xr-x.   1 root root    445152 Apr 11  2018 [01;32mssh-keyscan[0m
+-rwxr-xr-x.   1 root root    419240 Apr 11  2018 [01;32mssh-keygen[0m
+---x--s--x.   1 root nobody  382240 Apr 11  2018 [30;43mssh-agent[0m
+-rwxr-xr-x.   1 root root    360944 Apr 11  2018 [01;32mssh-add[0m
+-rwxr-xr-x.   1 root root    778736 Apr 11  2018 [01;32mssh[0m
+-rwxr-xr-x.   1 root root    145440 Apr 11  2018 [01;32msftp[0m
+-rwxr-xr-x.   1 root root     91408 Apr 11  2018 [01;32mscp[0m
+-rwxr-xr-x.   1 root root     72544 Apr 11  2018 [01;32mquotasync[0m
+-rwxr-xr-x.   1 root root     85312 Apr 11  2018 [01;32mquota[0m
+-rwxr-xr-x.   1 root root     11520 Apr 11  2018 [01;32mdb_verify[0m
+-rwxr-xr-x.   1 root root     11504 Apr 11  2018 [01;32mdb_upgrade[0m
+-rwxr-xr-x.   1 root root     19792 Apr 11  2018 [01;32mdb_tuner[0m
+-rwxr-xr-x.   1 root root     15616 Apr 11  2018 [01;32mdb_stat[0m
+-rwxr-xr-x.   1 root root     15704 Apr 11  2018 [01;32mdb_replicate[0m
+-rwxr-xr-x.   1 root root     11600 Apr 11  2018 [01;32mdb_recover[0m
+-rwxr-xr-x.   1 root root     33016 Apr 11  2018 [01;32mdb_printlog[0m
+-rwxr-xr-x.   1 root root     15704 Apr 11  2018 [01;32mdb_log_verify[0m
+-rwxr-xr-x.   1 root root     28152 Apr 11  2018 [01;32mdb_load[0m
+-rwxr-xr-x.   1 root root     15704 Apr 11  2018 [01;32mdb_hotbackup[0m
+-rwxr-xr-x.   1 root root     65992 Apr 11  2018 [01;32mdb_dump185[0m
+-rwxr-xr-x.   1 root root     15688 Apr 11  2018 [01;32mdb_dump[0m
+-rwxr-xr-x.   1 root root     15672 Apr 11  2018 [01;32mdb_deadlock[0m
+-rwxr-xr-x.   1 root root     11576 Apr 11  2018 [01;32mdb_checkpoint[0m
+-rwxr-xr-x.   1 root root     11488 Apr 11  2018 [01;32mdb_archive[0m
+-rwxr-xr-x.   1 root root     87104 Apr 12  2018 [01;32mchronyc[0m
+-rwxr-xr-x.   1 root root     15864 Apr 12  2018 [01;32mlchsh[0m
+-rwxr-xr-x.   1 root root     15896 Apr 12  2018 [01;32mlchfn[0m
+-rwxr-xr-x.   1 root root      1054 May 14  2018 [01;32mupdate-ca-trust[0m
+-rwxr-xr-x.   1 root root      1638 May 14  2018 [01;32mca-legacy[0m
+lrwxrwxrwx.   1 root root         3 Jun  5  2018 [01;36mcaptoinfo[0m -> [01;32mtic[0m
+lrwxrwxrwx.   1 root root         3 Jun  5  2018 [01;36minfotocap[0m -> [01;32mtic[0m
+lrwxrwxrwx.   1 root root         4 Jun  5  2018 [01;36mreset[0m -> [01;32mtset[0m
+lrwxrwxrwx.   1 root root         4 Jun  5  2018 [01;36mawk[0m -> [01;32mgawk[0m
+lrwxrwxrwx.   1 root root         2 Jun  5  2018 [01;36munxz[0m -> [01;32mxz[0m
+lrwxrwxrwx.   1 root root         2 Jun  5  2018 [01;36mxzcat[0m -> [01;32mxz[0m
+lrwxrwxrwx.   1 root root         6 Jun  5  2018 [01;36mxzcmp[0m -> [01;32mxzdiff[0m
+lrwxrwxrwx.   1 root root         6 Jun  5  2018 [01;36mxzfgrep[0m -> [01;32mxzgrep[0m
+lrwxrwxrwx.   1 root root         6 Jun  5  2018 [01;36mxzegrep[0m -> [01;32mxzgrep[0m
+lrwxrwxrwx.   1 root root         4 Jun  5  2018 [01;36mgneqn[0m -> [01;32mneqn[0m
+lrwxrwxrwx.   1 root root         3 Jun  5  2018 [01;36mgeqn[0m -> [01;32meqn[0m
+lrwxrwxrwx.   1 root root         3 Jun  5  2018 [01;36mgpic[0m -> [01;32mpic[0m
+lrwxrwxrwx.   1 root root         5 Jun  5  2018 [01;36mgnroff[0m -> [01;32mnroff[0m
+lrwxrwxrwx.   1 root root         6 Jun  5  2018 [01;36mgsoelim[0m -> [01;32msoelim[0m
+lrwxrwxrwx.   1 root root         5 Jun  5  2018 [01;36mgtroff[0m -> [01;32mtroff[0m
+lrwxrwxrwx.   1 root root         3 Jun  5  2018 [01;36mgtbl[0m -> [01;32mtbl[0m
+lrwxrwxrwx.   1 root root         6 Jun  5  2018 [01;36mzsoelim[0m -> [01;32msoelim[0m
+lrwxrwxrwx.   1 root root         3 Jun  5  2018 [01;36munlz4[0m -> [01;32mlz4[0m
+lrwxrwxrwx.   1 root root         3 Jun  5  2018 [01;36mlz4cat[0m -> [01;32mlz4[0m
+lrwxrwxrwx.   1 root root         8 Jun  5  2018 [01;36mdomainname[0m -> [01;32mhostname[0m
+lrwxrwxrwx.   1 root root         8 Jun  5  2018 [01;36mdnsdomainname[0m -> [01;32mhostname[0m
+lrwxrwxrwx.   1 root root         8 Jun  5  2018 [01;36mypdomainname[0m -> [01;32mhostname[0m
+lrwxrwxrwx.   1 root root         8 Jun  5  2018 [01;36mnisdomainname[0m -> [01;32mhostname[0m
+lrwxrwxrwx.   1 root root         4 Jun  5  2018 [01;36mgmake[0m -> [01;32mmake[0m
+lrwxrwxrwx.   1 root root         4 Jun  5  2018 [01;36mlastb[0m -> [01;32mlast[0m
+lrwxrwxrwx.   1 root root         4 Jun  5  2018 [01;36mping6[0m -> [01;32mping[0m
+lrwxrwxrwx.   1 root root         5 Jun  5  2018 [01;36mslogin[0m -> [01;32m./ssh[0m
+-rwxr-xr-x.   1 root root      3307 Jul 13  2018 [01;32mgpg-zip[0m
+-rwxr-xr-x.   1 root root     15720 Jul 13  2018 [01;32mwatchgnupg[0m
+-rwxr-xr-x.   1 root root    353672 Jul 13  2018 [01;32mgpgv2[0m
+-rwxr-xr-x.   1 root root     50056 Jul 13  2018 [01;32mgpgsplit[0m
+-rwxr-xr-x.   1 root root     24272 Jul 13  2018 [01;32mgpgparsemail[0m
+-rwxr-xr-x.   1 root root    156352 Jul 13  2018 [01;32mgpg-connect-agent[0m
+-rwxr-xr-x.   1 root root    143680 Jul 13  2018 [01;32mgpgconf[0m
+-rwxr-xr-x.   1 root root    296696 Jul 13  2018 [01;32mgpg-agent[0m
+-rwxr-xr-x.   1 root root    749976 Jul 13  2018 [01;32mgpg2[0m
+-rwxr-xr-x.   1 root root    232864 Oct 30 09:55 [01;32mstrip[0m
+-rwxr-xr-x.   1 root root     29200 Oct 30 09:55 [01;32mstrings[0m
+-rwxr-xr-x.   1 root root     33224 Oct 30 09:55 [01;32msize[0m
+-rwxr-xr-x.   1 root root    517992 Oct 30 09:55 [01;32mreadelf[0m
+-rwxr-xr-x.   1 root root     62744 Oct 30 09:55 [01;32mranlib[0m
+-rwxr-xr-x.   1 root root    366328 Oct 30 09:55 [01;32mobjdump[0m
+-rwxr-xr-x.   1 root root    232872 Oct 30 09:55 [01;32mobjcopy[0m
+-rwxr-xr-x.   1 root root     42472 Oct 30 09:55 [01;32mnm[0m
+-rwxr-xr-x.   1 root root   5354296 Oct 30 09:55 [01;32mld.gold[0m
+-rwxr-xr-x.   1 root root   1006216 Oct 30 09:55 [01;32mld.bfd[0m
+-rwxr-xr-x.   1 root root    100816 Oct 30 09:55 [01;32mgprof[0m
+-rwxr-xr-x.   1 root root     33040 Oct 30 09:55 [01;32melfedit[0m
+-rwxr-xr-x.   1 root root     28664 Oct 30 09:55 [01;32mc++filt[0m
+-rwxr-xr-x.   1 root root     62736 Oct 30 09:55 [01;32mar[0m
+-rwxr-xr-x.   1 root root     29200 Oct 30 09:55 [01;32maddr2line[0m
+-rwxr-xr-x.   1 root root   3178200 Oct 30 09:55 [01;32mdwp[0m
+-rwxr-xr-x.   1 root root    378080 Oct 30 09:55 [01;32mas[0m
+-rwxr-xr-x.   1 root root       132 Oct 30 15:13 [01;32mfc-cache[0m
+-rwsr-xr-x.   1 root root     41872 Oct 30 16:33 [37;41mnewgrp[0m
+-rwxr-xr-x.   1 root root     19680 Oct 30 16:33 [01;32mlastlog[0m
+-rwsr-xr-x.   1 root root     78272 Oct 30 16:33 [37;41mgpasswd[0m
+-rwsr-xr-x.   1 root root     64328 Oct 30 16:33 [37;41mchage[0m
+-rwxr-xr-x.   1 root root    155096 Oct 30 16:40 [01;32mnetstat[0m
+-rwxr-xr-x.   1 root root     62368 Oct 30 16:42 [01;32mxargs[0m
+-rwxr-xr-x.   1 root root    190880 Oct 30 16:42 [01;32moldfind[0m
+-rwxr-xr-x.   1 root root    199304 Oct 30 16:42 [01;32mfind[0m
+-rwxr-xr-x.   1 root root       262 Oct 30 16:50 [01;32mrmail.postfix[0m
+-rwxr-xr-x.   1 root root    418760 Oct 30 16:54 [01;32mwget[0m
+-rwxr-xr-x.   1 root root     24800 Oct 30 16:58 [01;32mwatch[0m
+-rwxr-xr-x.   1 root root     19984 Oct 30 16:58 [01;32mw[0m
+-rwxr-xr-x.   1 root root     32296 Oct 30 16:58 [01;32mvmstat[0m
+-rwxr-xr-x.   1 root root     11552 Oct 30 16:58 [01;32muptime[0m
+-rwxr-xr-x.   1 root root    106944 Oct 30 16:58 [01;32mtop[0m
+-rwxr-xr-x.   1 root root     15808 Oct 30 16:58 [01;32mtload[0m
+-rwxr-xr-x.   1 root root     24256 Oct 30 16:58 [01;32msnice[0m
+-rwxr-xr-x.   1 root root     20048 Oct 30 16:58 [01;32mslabtop[0m
+-rwxr-xr-x.   1 root root     24256 Oct 30 16:58 [01;32mskill[0m
+-rwxr-xr-x.   1 root root     11608 Oct 30 16:58 [01;32mpwdx[0m
+-rwxr-xr-x.   1 root root    100208 Oct 30 16:58 [01;32mps[0m
+-rwxr-xr-x.   1 root root     28344 Oct 30 16:58 [01;32mpmap[0m
+-rwxr-xr-x.   1 root root     28408 Oct 30 16:58 [01;32mpkill[0m
+-rwxr-xr-x.   1 root root     28408 Oct 30 16:58 [01;32mpgrep[0m
+-rwxr-xr-x.   1 root root     19864 Oct 30 16:58 [01;32mfree[0m
+-rwxr-xr-x.   1 root root        65 Oct 30 16:59 [01;32mmkfontdir[0m
+-rwxr--r--.   1 root root      1322 Oct 30 16:59 [01;32mxorg-x11-fonts-update-dirs[0m
+-rwxr-xr-x.   1 root root     19936 Oct 30 16:59 [01;32mucs2any[0m
+-rwxr-xr-x.   1 root root     33256 Oct 30 16:59 [01;32mmkfontscale[0m
+-rwxr-xr-x.   1 root root     36856 Oct 30 16:59 [01;32mfonttosfnt[0m
+-rwxr-xr-x.   1 root root     11464 Oct 30 16:59 [01;32mbdftruncate[0m
+-rwxr-xr-x.   1 root root     45248 Oct 30 16:59 [01;32mbdftopcf[0m
+-rwxr-xr-x.   1 root root      6964 Oct 30 17:07 [01;32mbashbug-64[0m
+-rwxr-xr-x.   1 root root        28 Oct 30 17:07 [01;32mwait[0m
+-rwxr-xr-x.   1 root root        31 Oct 30 17:07 [01;32munalias[0m
+-rwxr-xr-x.   1 root root        29 Oct 30 17:07 [01;32mumask[0m
+-rwxr-xr-x.   1 root root        28 Oct 30 17:07 [01;32mread[0m
+-rwxr-xr-x.   1 root root        28 Oct 30 17:07 [01;32mjobs[0m
+-rwxr-xr-x.   1 root root        31 Oct 30 17:07 [01;32mgetopts[0m
+-rwxr-xr-x.   1 root root        26 Oct 30 17:07 [01;32mfg[0m
+-rwxr-xr-x.   1 root root        26 Oct 30 17:07 [01;32mfc[0m
+-rwxr-xr-x.   1 root root        31 Oct 30 17:07 [01;32mcommand[0m
+-rwxr-xr-x.   1 root root        26 Oct 30 17:07 [01;32mcd[0m
+-rwxr-xr-x.   1 root root        26 Oct 30 17:07 [01;32mbg[0m
+-rwxr-xr-x.   1 root root        29 Oct 30 17:07 [01;32malias[0m
+-rwxr-xr-x.   1 root root    964608 Oct 30 17:07 [01;32mbash[0m
+-rwxr-xr-x.   1 root root     28888 Oct 30 17:09 [01;32maserver[0m
+-rwxr-xr-x.   1 root root     12465 Oct 30 17:15 [01;32murlgrabber[0m
+-rwxr-xr-x.   1 root root      1860 Oct 30 17:35 [01;32mpflags[0m
+-rwxr-xr-x.   1 root root     20096 Oct 30 18:03 [01;32mcsslint-0.6[0m
+-rwxr-xr-x.   1 root root     19848 Oct 30 18:16 [01;32mfile[0m
+-rwxr-xr-x.   1 root root     11536 Oct 30 18:34 [01;32mfc-validate[0m
+-rwxr-xr-x.   1 root root     11536 Oct 30 18:34 [01;32mfc-scan[0m
+-rwxr-xr-x.   1 root root     11496 Oct 30 18:34 [01;32mfc-query[0m
+-rwxr-xr-x.   1 root root     11528 Oct 30 18:34 [01;32mfc-pattern[0m
+-rwxr-xr-x.   1 root root     11592 Oct 30 18:34 [01;32mfc-match[0m
+-rwxr-xr-x.   1 root root     11528 Oct 30 18:34 [01;32mfc-list[0m
+-rwxr-xr-x.   1 root root     11464 Oct 30 18:34 [01;32mfc-conflist[0m
+-rwxr-xr-x.   1 root root     15768 Oct 30 18:34 [01;32mfc-cat[0m
+-rwxr-xr-x.   1 root root     15824 Oct 30 18:34 [01;32mfc-cache-64[0m
+-rwxr-xr-x.   1 root root     11600 Oct 30 19:03 [01;32mlsattr[0m
+-rwxr-xr-x.   1 root root     11616 Oct 30 19:03 [01;32mchattr[0m
+-rwxr-xr-x.   1 root root     29056 Oct 30 19:16 [01;32myes[0m
+-rwxr-xr-x.   1 root root     29072 Oct 30 19:16 [01;32mwhoami[0m
+-rwxr-xr-x.   1 root root     49968 Oct 30 19:16 [01;32mwho[0m
+-rwxr-xr-x.   1 root root     41688 Oct 30 19:16 [01;32mwc[0m
+-rwxr-xr-x.   1 root root    117680 Oct 30 19:16 [01;32mvdir[0m
+-rwxr-xr-x.   1 root root     33256 Oct 30 19:16 [01;32musers[0m
+-rwxr-xr-x.   1 root root     29072 Oct 30 19:16 [01;32munlink[0m
+-rwxr-xr-x.   1 root root     45856 Oct 30 19:16 [01;32muniq[0m
+-rwxr-xr-x.   1 root root     33312 Oct 30 19:16 [01;32munexpand[0m
+-rwxr-xr-x.   1 root root     33168 Oct 30 19:16 [01;32muname[0m
+-rwxr-xr-x.   1 root root     29056 Oct 30 19:16 [01;32mtty[0m
+-rwxr-xr-x.   1 root root     37432 Oct 30 19:16 [01;32mtsort[0m
+-rwxr-xr-x.   1 root root     54032 Oct 30 19:16 [01;32mtruncate[0m
+-rwxr-xr-x.   1 root root     29016 Oct 30 19:16 [01;32mtrue[0m
+-rwxr-xr-x.   1 root root     45752 Oct 30 19:16 [01;32mtr[0m
+-rwxr-xr-x.   1 root root     62568 Oct 30 19:16 [01;32mtouch[0m
+-rwxr-xr-x.   1 root root     54672 Oct 30 19:16 [01;32mtimeout[0m
+-rwxr-xr-x.   1 root root     37400 Oct 30 19:16 [01;32mtest[0m
+-rwxr-xr-x.   1 root root     33248 Oct 30 19:16 [01;32mtee[0m
+-rwxr-xr-x.   1 root root     66896 Oct 30 19:16 [01;32mtail[0m
+-rwxr-xr-x.   1 root root     33304 Oct 30 19:16 [01;32mtac[0m
+-rwxr-xr-x.   1 root root     29064 Oct 30 19:16 [01;32msync[0m
+-rwxr-xr-x.   1 root root     37480 Oct 30 19:16 [01;32msum[0m
+-rwxr-xr-x.   1 root root     70344 Oct 30 19:16 [01;32mstty[0m
+-rwxr-xr-x.   1 root root     66496 Oct 30 19:16 [01;32mstdbuf[0m
+-rwxr-xr-x.   1 root root     74960 Oct 30 19:16 [01;32mstat[0m
+-rwxr-xr-x.   1 root root     71216 Oct 30 19:16 [01;32msplit[0m
+-rwxr-xr-x.   1 root root    117752 Oct 30 19:16 [01;32msort[0m
+-rwxr-xr-x.   1 root root     33216 Oct 30 19:16 [01;32msleep[0m
+-rwxr-xr-x.   1 root root     50384 Oct 30 19:16 [01;32mshuf[0m
+-rwxr-xr-x.   1 root root     54264 Oct 30 19:16 [01;32mshred[0m
+-rwxr-xr-x.   1 root root     41696 Oct 30 19:16 [01;32msha512sum[0m
+-rwxr-xr-x.   1 root root     41696 Oct 30 19:16 [01;32msha384sum[0m
+-rwxr-xr-x.   1 root root     41688 Oct 30 19:16 [01;32msha256sum[0m
+-rwxr-xr-x.   1 root root     41688 Oct 30 19:16 [01;32msha224sum[0m
+-rwxr-xr-x.   1 root root     37520 Oct 30 19:16 [01;32msha1sum[0m
+-rwxr-xr-x.   1 root root     49720 Oct 30 19:16 [01;32mseq[0m
+-rwxr-xr-x.   1 root root     33336 Oct 30 19:16 [01;32mruncon[0m
+-rwxr-xr-x.   1 root root     41488 Oct 30 19:16 [01;32mrmdir[0m
+-rwxr-xr-x.   1 root root     62952 Oct 30 19:16 [01;32mrm[0m
+-rwxr-xr-x.   1 root root     62752 Oct 30 19:16 [01;32mrealpath[0m
+-rwxr-xr-x.   1 root root     41888 Oct 30 19:16 [01;32mreadlink[0m
+-rwxr-xr-x.   1 root root     33280 Oct 30 19:16 [01;32mpwd[0m
+-rwxr-xr-x.   1 root root     66720 Oct 30 19:16 [01;32mptx[0m
+-rwxr-xr-x.   1 root root     49848 Oct 30 19:16 [01;32mprintf[0m
+-rwxr-xr-x.   1 root root     29040 Oct 30 19:16 [01;32mprintenv[0m
+-rwxr-xr-x.   1 root root     66752 Oct 30 19:16 [01;32mpr[0m
+-rwxr-xr-x.   1 root root     37544 Oct 30 19:16 [01;32mpinky[0m
+-rwxr-xr-x.   1 root root     33144 Oct 30 19:16 [01;32mpathchk[0m
+-rwxr-xr-x.   1 root root     33208 Oct 30 19:16 [01;32mpaste[0m
+-rwxr-xr-x.   1 root root     66472 Oct 30 19:16 [01;32mod[0m
+-rwxr-xr-x.   1 root root     66336 Oct 30 19:16 [01;32mnumfmt[0m
+-rwxr-xr-x.   1 root root     33232 Oct 30 19:16 [01;32mnproc[0m
+-rwxr-xr-x.   1 root root     33280 Oct 30 19:16 [01;32mnohup[0m
+-rwxr-xr-x.   1 root root     41624 Oct 30 19:16 [01;32mnl[0m
+-rwxr-xr-x.   1 root root     33184 Oct 30 19:16 [01;32mnice[0m
+-rwxr-xr-x.   1 root root    130432 Oct 30 19:16 [01;32mmv[0m
+-rwxr-xr-x.   1 root root     41720 Oct 30 19:16 [01;32mmktemp[0m
+-rwxr-xr-x.   1 root root     67264 Oct 30 19:16 [01;32mmknod[0m
+-rwxr-xr-x.   1 root root     63144 Oct 30 19:16 [01;32mmkfifo[0m
+-rwxr-xr-x.   1 root root     79864 Oct 30 19:16 [01;32mmkdir[0m
+-rwxr-xr-x.   1 root root     41592 Oct 30 19:16 [01;32mmd5sum[0m
+-rwxr-xr-x.   1 root root    117680 Oct 30 19:16 [01;32mls[0m
+-rwxr-xr-x.   1 root root     29072 Oct 30 19:16 [01;32mlogname[0m
+-rwxr-xr-x.   1 root root     58688 Oct 30 19:16 [01;32mln[0m
+-rwxr-xr-x.   1 root root     29064 Oct 30 19:16 [01;32mlink[0m
+-rwxr-xr-x.   1 root root     49976 Oct 30 19:16 [01;32mjoin[0m
+-rwxr-xr-x.   1 root root    143056 Oct 30 19:16 [01;32minstall[0m
+-rwxr-xr-x.   1 root root     37488 Oct 30 19:16 [01;32mid[0m
+-rwxr-xr-x.   1 root root     29072 Oct 30 19:16 [01;32mhostid[0m
+-rwxr-xr-x.   1 root root     41536 Oct 30 19:16 [01;32mhead[0m
+-rwxr-xr-x.   1 root root     33280 Oct 30 19:16 [01;32mgroups[0m
+-rwxr-xr-x.   1 root root     37392 Oct 30 19:16 [01;32mfold[0m
+-rwxr-xr-x.   1 root root     37424 Oct 30 19:16 [01;32mfmt[0m
+-rwxr-xr-x.   1 root root     29016 Oct 30 19:16 [01;32mfalse[0m
+-rwxr-xr-x.   1 root root     95608 Oct 30 19:16 [01;32mfactor[0m
+-rwxr-xr-x.   1 root root     37496 Oct 30 19:16 [01;32mexpr[0m
+-rwxr-xr-x.   1 root root     33336 Oct 30 19:16 [01;32mexpand[0m
+-rwxr-xr-x.   1 root root     29048 Oct 30 19:16 [01;32menv[0m
+-rwxr-xr-x.   1 root root     33128 Oct 30 19:16 [01;32mecho[0m
+-rwxr-xr-x.   1 root root    112992 Oct 30 19:16 [01;32mdu[0m
+-rwxr-xr-x.   1 root root     29080 Oct 30 19:16 [01;32mdirname[0m
+-rwxr-xr-x.   1 root root     41472 Oct 30 19:16 [01;32mdircolors[0m
+-rwxr-xr-x.   1 root root    117680 Oct 30 19:16 [01;32mdir[0m
+-rwxr-xr-x.   1 root root    100936 Oct 30 19:16 [01;32mdf[0m
+-rwxr-xr-x.   1 root root     74952 Oct 30 19:16 [01;32mdd[0m
+-rwxr-xr-x.   1 root root     62296 Oct 30 19:16 [01;32mdate[0m
+-rwxr-xr-x.   1 root root     41640 Oct 30 19:16 [01;32mcut[0m
+-rwxr-xr-x.   1 root root     50032 Oct 30 19:16 [01;32mcsplit[0m
+-rwxr-xr-x.   1 root root    155264 Oct 30 19:16 [01;32mcp[0m
+-rwxr-xr-x.   1 root root     37496 Oct 30 19:16 [01;32mcomm[0m
+-rwxr-xr-x.   1 root root     33192 Oct 30 19:16 [01;32mcksum[0m
+-rwxr-xr-x.   1 root root     62904 Oct 30 19:16 [01;32mchown[0m
+-rwxr-xr-x.   1 root root     58656 Oct 30 19:16 [01;32mchmod[0m
+-rwxr-xr-x.   1 root root     62848 Oct 30 19:16 [01;32mchgrp[0m
+-rwxr-xr-x.   1 root root     63016 Oct 30 19:16 [01;32mchcon[0m
+-rwxr-xr-x.   1 root root     54160 Oct 30 19:16 [01;32mcat[0m
+-rwxr-xr-x.   1 root root     29128 Oct 30 19:16 [01;32mbasename[0m
+-rwxr-xr-x.   1 root root     37440 Oct 30 19:16 [01;32mbase64[0m
+-rwxr-xr-x.   1 root root     33168 Oct 30 19:16 [01;32march[0m
+-rwxr-xr-x.   1 root root     41544 Oct 30 19:16 [01;32m[[0m
+-rwxr-xr-x.   1 root root     12096 Oct 30 19:27 [01;32mrpmkeys[0m
+-rwxr-xr-x.   1 root root     12096 Oct 30 19:27 [01;32mrpmdb[0m
+-rwxr-xr-x.   1 root root     11496 Oct 30 19:27 [01;32mrpm2cpio[0m
+-rwxr-xr-x.   1 root root     16200 Oct 30 19:27 [01;32mrpm[0m
+-rwxr-xr-x.   1 root root    910176 Oct 30 19:57 [01;32mvi[0m
+-rwxr-xr-x.   1 root root     19648 Oct 30 20:16 [01;32mteamnl[0m
+-rwxr-xr-x.   1 root root     29752 Oct 30 20:16 [01;32mteamdctl[0m
+-rwxr-xr-x.   1 root root    154736 Oct 30 20:16 [01;32mteamd[0m
+-rwxr-xr-x.   1 root root    346136 Oct 30 20:24 [01;32mtar[0m
+-rwxr-xr-x.   1 root root     46584 Oct 30 20:26 [01;32mwhatis[0m
+-rwxr-xr-x.   1 root root     33336 Oct 30 20:26 [01;32mmanpath[0m
+-rwxr-xr-x.   1 root root    125184 Oct 30 20:26 [01;32mmandb[0m
+-rwxr-xr-x.   1 root root    102848 Oct 30 20:26 [01;32mman[0m
+-rwxr-xr-x.   1 root root     87128 Oct 30 20:26 [01;32mlexgrog[0m
+-rwxr-xr-x.   1 root root     37632 Oct 30 20:26 [01;32mcatman[0m
+-rwxr-xr-x.   1 root root     34620 Oct 30 20:42 [01;32mrescan-scsi-bus.sh[0m
+-rwxr-xr-x.   1 root root       936 Oct 30 20:42 [01;32mscsi_temperature[0m
+-rwxr-xr-x.   1 root root      1474 Oct 30 20:42 [01;32mscsi_stop[0m
+-rwxr-xr-x.   1 root root      1285 Oct 30 20:42 [01;32mscsi_start[0m
+-rwxr-xr-x.   1 root root      3854 Oct 30 20:42 [01;32mscsi_satl[0m
+-rwxr-xr-x.   1 root root      1121 Oct 30 20:42 [01;32mscsi_ready[0m
+-rwxr-xr-x.   1 root root      1327 Oct 30 20:42 [01;32mscsi_readcap[0m
+-rwxr-xr-x.   1 root root      3633 Oct 30 20:42 [01;32mscsi_mandat[0m
+-rwxr-xr-x.   1 root root      7910 Oct 30 20:42 [01;32mscsi_logging_level[0m
+-rwxr-xr-x.   1 root root     36536 Oct 30 20:42 [01;32msg_xcopy[0m
+-rwxr-xr-x.   1 root root     20064 Oct 30 20:42 [01;32msg_wr_mode[0m
+-rwxr-xr-x.   1 root root     20424 Oct 30 20:42 [01;32msg_write_same[0m
+-rwxr-xr-x.   1 root root     16000 Oct 30 20:42 [01;32msg_write_long[0m
+-rwxr-xr-x.   1 root root     16120 Oct 30 20:42 [01;32msg_write_buffer[0m
+-rwxr-xr-x.   1 root root     79600 Oct 30 20:42 [01;32msg_vpd[0m
+-rwxr-xr-x.   1 root root     16160 Oct 30 20:42 [01;32msg_verify[0m
+-rwxr-xr-x.   1 root root     15928 Oct 30 20:42 [01;32msg_unmap[0m
+-rwxr-xr-x.   1 root root     15928 Oct 30 20:42 [01;32msg_turs[0m
+-rwxr-xr-x.   1 root root     16056 Oct 30 20:42 [01;32msg_test_rwbuf[0m
+-rwxr-xr-x.   1 root root     11872 Oct 30 20:42 [01;32msg_sync[0m
+-rwxr-xr-x.   1 root root     20160 Oct 30 20:42 [01;32msg_stpg[0m
+-rwxr-xr-x.   1 root root     20256 Oct 30 20:42 [01;32msg_start[0m
+-rwxr-xr-x.   1 root root     69248 Oct 30 20:42 [01;32msg_ses[0m
+-rwxr-xr-x.   1 root root     20584 Oct 30 20:42 [01;32msg_senddiag[0m
+-rwxr-xr-x.   1 root root     15792 Oct 30 20:42 [01;32msg_scan[0m
+-rwxr-xr-x.   1 root root     15856 Oct 30 20:42 [01;32msg_sat_set_features[0m
+-rwxr-xr-x.   1 root root     16328 Oct 30 20:42 [01;32msg_sat_phy_event[0m
+-rwxr-xr-x.   1 root root     16000 Oct 30 20:42 [01;32msg_sat_identify[0m
+-rwxr-xr-x.   1 root root     20392 Oct 30 20:42 [01;32msg_sanitize[0m
+-rwxr-xr-x.   1 root root     20112 Oct 30 20:42 [01;32msg_safte[0m
+-rwxr-xr-x.   1 root root     15832 Oct 30 20:42 [01;32msg_rtpg[0m
+-rwxr-xr-x.   1 root root     11680 Oct 30 20:42 [01;32msg_rmsn[0m
+-rwxr-xr-x.   1 root root     11784 Oct 30 20:42 [01;32msg_reset[0m
+-rwxr-xr-x.   1 root root     16032 Oct 30 20:42 [01;32msg_requests[0m
+-rwxr-xr-x.   1 root root     15920 Oct 30 20:42 [01;32msg_referrals[0m
+-rwxr-xr-x.   1 root root     15960 Oct 30 20:42 [01;32msg_reassign[0m
+-rwxr-xr-x.   1 root root     16000 Oct 30 20:42 [01;32msg_read_long[0m
+-rwxr-xr-x.   1 root root     20184 Oct 30 20:42 [01;32msg_readcap[0m
+-rwxr-xr-x.   1 root root     15960 Oct 30 20:42 [01;32msg_read_buffer[0m
+-rwxr-xr-x.   1 root root     11656 Oct 30 20:42 [01;32msg_read_block_limits[0m
+-rwxr-xr-x.   1 root root     23960 Oct 30 20:42 [01;32msg_read[0m
+-rwxr-xr-x.   1 root root     15560 Oct 30 20:42 [01;32msg_rdac[0m
+-rwxr-xr-x.   1 root root     20216 Oct 30 20:42 [01;32msg_rbuf[0m
+-rwxr-xr-x.   1 root root     20344 Oct 30 20:42 [01;32msg_raw[0m
+-rwxr-xr-x.   1 root root     11640 Oct 30 20:42 [01;32msg_prevent[0m
+-rwxr-xr-x.   1 root root     29112 Oct 30 20:42 [01;32msg_persist[0m
+-rwxr-xr-x.   1 root root     36768 Oct 30 20:42 [01;32msgp_dd[0m
+-rwxr-xr-x.   1 root root     24536 Oct 30 20:42 [01;32msg_opcodes[0m
+-rwxr-xr-x.   1 root root     30080 Oct 30 20:42 [01;32msg_modes[0m
+-rwxr-xr-x.   1 root root     32352 Oct 30 20:42 [01;32msgm_dd[0m
+-rwxr-xr-x.   1 root root     24416 Oct 30 20:42 [01;32msg_map26[0m
+-rwxr-xr-x.   1 root root     15664 Oct 30 20:42 [01;32msg_map[0m
+-rwxr-xr-x.   1 root root     20208 Oct 30 20:42 [01;32msg_luns[0m
+-rwxr-xr-x.   1 root root     94736 Oct 30 20:42 [01;32msg_logs[0m
+-rwxr-xr-x.   1 root root     85776 Oct 30 20:42 [01;32msg_inq[0m
+-rwxr-xr-x.   1 root root     67424 Oct 30 20:42 [01;32msginfo[0m
+-rwxr-xr-x.   1 root root     15904 Oct 30 20:42 [01;32msg_ident[0m
+-rwxr-xr-x.   1 root root     15952 Oct 30 20:42 [01;32msg_get_lba_status[0m
+-rwxr-xr-x.   1 root root     28984 Oct 30 20:42 [01;32msg_get_config[0m
+-rwxr-xr-x.   1 root root     24704 Oct 30 20:42 [01;32msg_format[0m
+-rwxr-xr-x.   1 root root     11424 Oct 30 20:42 [01;32msg_emc_trespass[0m
+-rwxr-xr-x.   1 root root     15952 Oct 30 20:42 [01;32msg_decode_sense[0m
+-rwxr-xr-x.   1 root root     44752 Oct 30 20:42 [01;32msg_dd[0m
+-rwxr-xr-x.   1 root root     20592 Oct 30 20:42 [01;32msg_copy_results[0m
+-rwxr-xr-x.   1 root root     16256 Oct 30 20:42 [01;32msg_compare_and_write[0m
+-rwxr-xr-x.   1 root root     32696 Oct 30 20:42 [01;32mauvirt[0m
+-rwxr-xr-x.   1 root root     11448 Oct 30 20:42 [01;32mausyscall[0m
+-rwxr-xr-x.   1 root root     11624 Oct 30 20:42 [01;32maulastlog[0m
+-rwxr-xr-x.   1 root root     15856 Oct 30 20:42 [01;32maulast[0m
+-rwxr-xr-x.   1 root root    270136 Oct 30 21:29 [01;32mqemu-ga[0m
+-rwxr-xr-x.   1 root root    180552 Oct 30 21:48 [01;32msedispol[0m
+-rwxr-xr-x.   1 root root    255408 Oct 30 21:48 [01;32msedismod[0m
+-rwxr-xr-x.   1 root root    422360 Oct 30 21:48 [01;32mcheckpolicy[0m
+-rwxr-xr-x.   1 root root    410096 Oct 30 21:48 [01;32mcheckmodule[0m
+-rwxr-xr-x.   1 root root     11576 Oct 30 22:02 [01;32mgeoipupdate[0m
+-rwxr-xr-x.   1 root root     11504 Oct 30 22:02 [01;32mgeoiplookup6[0m
+-rwxr-xr-x.   1 root root     15720 Oct 30 22:02 [01;32mgeoiplookup[0m
+-rwxr-xr-x.   1 root root     15400 Oct 30 22:26 [01;32mpkttyagent[0m
+-rwsr-xr-x.   1 root root     23656 Oct 30 22:26 [37;41mpkexec[0m
+-rwxr-xr-x.   1 root root     23656 Oct 30 22:26 [01;32mpkcheck[0m
+-rwxr-xr-x.   1 root root     15448 Oct 30 22:26 [01;32mpkaction[0m
+-rwxr-xr-x.   1 root root       363 Oct 30 22:38 [01;32municode_stop[0m
+-rwxr-xr-x.   1 root root      2555 Oct 30 22:38 [01;32municode_start[0m
+-rwxr-xr-x.   1 root root     16160 Oct 30 22:39 [01;32mvlock[0m
+-rwxr-xr-x.   1 root root     15680 Oct 30 22:39 [01;32mshowkey[0m
+-rwxr-xr-x.   1 root root     15912 Oct 30 22:39 [01;32mshowconsolefont[0m
+-rwxr-xr-x.   1 root root     11688 Oct 30 22:39 [01;32msetvtrgb[0m
+-rwxr-xr-x.   1 root root     11568 Oct 30 22:39 [01;32msetmetamode[0m
+-rwxr-xr-x.   1 root root     11520 Oct 30 22:39 [01;32msetleds[0m
+-rwxr-xr-x.   1 root root     11496 Oct 30 22:39 [01;32msetkeycodes[0m
+-rwxr-xr-x.   1 root root     41432 Oct 30 22:39 [01;32msetfont[0m
+-rwxr-xr-x.   1 root root     20176 Oct 30 22:39 [01;32mresizecons[0m
+-rwxr-xr-x.   1 root root     20008 Oct 30 22:39 [01;32mpsfxtable[0m
+-rwxr-xr-x.   1 root root     20024 Oct 30 22:39 [01;32mopenvt[0m
+-rwxr-xr-x.   1 root root     20344 Oct 30 22:39 [01;32mmapscrn[0m
+-rwxr-xr-x.   1 root root     24544 Oct 30 22:39 [01;32mloadunimap[0m
+-rwxr-xr-x.   1 root root    113184 Oct 30 22:39 [01;32mloadkeys[0m
+-rwxr-xr-x.   1 root root     11560 Oct 30 22:39 [01;32mkbdrate[0m
+-rwxr-xr-x.   1 root root     11504 Oct 30 22:39 [01;32mkbd_mode[0m
+-rwxr-xr-x.   1 root root     11528 Oct 30 22:39 [01;32mkbdinfo[0m
+-rwxr-xr-x.   1 root root     11496 Oct 30 22:39 [01;32mgetkeycodes[0m
+-rwxr-xr-x.   1 root root     11504 Oct 30 22:39 [01;32mfgconsole[0m
+-rwxr-xr-x.   1 root root     79440 Oct 30 22:39 [01;32mdumpkeys[0m
+-rwxr-xr-x.   1 root root     11496 Oct 30 22:39 [01;32mdeallocvt[0m
+-rwxr-xr-x.   1 root root     11480 Oct 30 22:39 [01;32mchvt[0m
+-rwxr-xr-x.   1 root root    555248 Oct 30 22:42 [01;32mopenssl[0m
+-rwxr-sr-x.   1 root tty      19624 Oct 30 22:48 [30;43mwrite[0m
+-rwxr-xr-x.   1 root root     20720 Oct 30 22:48 [01;32mwhereis[0m
+-rwxr-xr-x.   1 root root     41696 Oct 30 22:48 [01;32mwdctl[0m
+-rwxr-xr-x.   1 root root     11552 Oct 30 22:48 [01;32muuidgen[0m
+-rwxr-xr-x.   1 root root     15896 Oct 30 22:48 [01;32mutmpdump[0m
+-rwxr-xr-x.   1 root root     15904 Oct 30 22:48 [01;32munshare[0m
+-rwsr-xr-x.   1 root root     32048 Oct 30 22:48 [37;41mumount[0m
+-rwxr-xr-x.   1 root root     20016 Oct 30 22:48 [01;32mul[0m
+-rwxr-xr-x.   1 root root     28952 Oct 30 22:48 [01;32mtaskset[0m
+-rwxr-xr-x.   1 root root     24496 Oct 30 22:48 [01;32mtailf[0m
+-rwsr-xr-x.   1 root root     32208 Oct 30 22:48 [37;41msu[0m
+-rwxr-xr-x.   1 root root     28224 Oct 30 22:48 [01;32msetterm[0m
+-rwxr-xr-x.   1 root root     11560 Oct 30 22:48 [01;32msetsid[0m
+-rwxr-xr-x.   1 root root     36976 Oct 30 22:48 [01;32msetpriv[0m
+-rwxr-xr-x.   1 root root     15712 Oct 30 22:48 [01;32msetarch[0m
+-rwxr-xr-x.   1 root root     15736 Oct 30 22:48 [01;32mscriptreplay[0m
+-rwxr-xr-x.   1 root root     20152 Oct 30 22:48 [01;32mscript[0m
+-rwxr-xr-x.   1 root root     11600 Oct 30 22:48 [01;32mrev[0m
+-rwxr-xr-x.   1 root root     11552 Oct 30 22:48 [01;32mrenice[0m
+-rwxr-xr-x.   1 root root     11600 Oct 30 22:48 [01;32mrename[0m
+-rwxr-xr-x.   1 root root     11624 Oct 30 22:48 [01;32mraw[0m
+-rwxr-xr-x.   1 root root     42232 Oct 30 22:48 [01;32mprlimit[0m
+-rwxr-xr-x.   1 root root     28920 Oct 30 22:48 [01;32mnsenter[0m
+-rwxr-xr-x.   1 root root     28672 Oct 30 22:48 [01;32mnamei[0m
+-rwxr-xr-x.   1 root root     15760 Oct 30 22:48 [01;32mmountpoint[0m
+-rwsr-xr-x.   1 root root     44320 Oct 30 22:48 [37;41mmount[0m
+-rwxr-xr-x.   1 root root     41192 Oct 30 22:48 [01;32mmore[0m
+-rwxr-xr-x.   1 root root     15896 Oct 30 22:48 [01;32mmcookie[0m
+-rwxr-xr-x.   1 root root     37360 Oct 30 22:48 [01;32mlsns[0m
+-rwxr-xr-x.   1 root root     41792 Oct 30 22:48 [01;32mlsmem[0m
+-rwxr-xr-x.   1 root root     54216 Oct 30 22:48 [01;32mlslogins[0m
+-rwxr-xr-x.   1 root root     42032 Oct 30 22:48 [01;32mlslocks[0m
+-rwxr-xr-x.   1 root root     62480 Oct 30 22:48 [01;32mlsipc[0m
+-rwxr-xr-x.   1 root root     62240 Oct 30 22:48 [01;32mlscpu[0m
+-rwxr-xr-x.   1 root root     81104 Oct 30 22:48 [01;32mlsblk[0m
+-rwxr-xr-x.   1 root root     11616 Oct 30 22:48 [01;32mlook[0m
+-rwxr-xr-x.   1 root root     37328 Oct 30 22:48 [01;32mlogin[0m
+-rwxr-xr-x.   1 root root     29328 Oct 30 22:48 [01;32mlogger[0m
+-rwxr-xr-x.   1 root root     33672 Oct 30 22:48 [01;32mkill[0m
+-rwxr-xr-x.   1 root root     24432 Oct 30 22:48 [01;32misosize[0m
+-rwxr-xr-x.   1 root root     49584 Oct 30 22:48 [01;32mipcs[0m
+-rwxr-xr-x.   1 root root     24464 Oct 30 22:48 [01;32mipcrm[0m
+-rwxr-xr-x.   1 root root     24624 Oct 30 22:48 [01;32mipcmk[0m
+-rwxr-xr-x.   1 root root     24512 Oct 30 22:48 [01;32mionice[0m
+-rwxr-xr-x.   1 root root     32840 Oct 30 22:48 [01;32mhexdump[0m
+-rwxr-xr-x.   1 root root     15832 Oct 30 22:48 [01;32mgetopt[0m
+-rwxr-xr-x.   1 root root     24496 Oct 30 22:48 [01;32mflock[0m
+-rwxr-xr-x.   1 root root     59824 Oct 30 22:48 [01;32mfindmnt[0m
+-rwxr-xr-x.   1 root root     24456 Oct 30 22:48 [01;32mfallocate[0m
+-rwxr-xr-x.   1 root root     50048 Oct 30 22:48 [01;32meject[0m
+-rwxr-xr-x.   1 root root     49728 Oct 30 22:48 [01;32mdmesg[0m
+-rwxr-xr-x.   1 root root     28712 Oct 30 22:48 [01;32mcolumn[0m
+-rwxr-xr-x.   1 root root     20288 Oct 30 22:48 [01;32mcolrm[0m
+-rwxr-xr-x.   1 root root     11632 Oct 30 22:48 [01;32mcolcrt[0m
+-rwxr-xr-x.   1 root root     24504 Oct 30 22:48 [01;32mcol[0m
+-rws--x--x.   1 root root     23960 Oct 30 22:48 [37;41mchsh[0m
+-rwxr-xr-x.   1 root root     32992 Oct 30 22:48 [01;32mchrt[0m
+-rwxr-xr-x.   1 root root     41464 Oct 30 22:48 [01;32mchmem[0m
+-rws--x--x.   1 root root     24048 Oct 30 22:48 [37;41mchfn[0m
+-rwxr-xr-x.   1 root root     37736 Oct 30 22:48 [01;32mcal[0m
+-rwxr-xr-x.   1 root root     11288 Oct 30 22:57 [01;32musleep[0m
+-rwxr-xr-x.   1 root root     15496 Oct 30 22:57 [01;32mipcalc[0m
+-rwxr-xr-x.   1 root root     11031 Oct 30 22:58 [01;32myum-groups-manager[0m
+-rwxr-xr-x.   1 root root     11115 Oct 30 22:58 [01;32myumdownloader[0m
+-rwxr-xr-x.   1 root root      7903 Oct 30 22:58 [01;32myum-debug-restore[0m
+-rwxr-xr-x.   1 root root      8538 Oct 30 22:58 [01;32myum-debug-dump[0m
+-rwxr-xr-x.   1 root root      9579 Oct 30 22:58 [01;32myum-config-manager[0m
+-rwxr-xr-x.   1 root root     10189 Oct 30 22:58 [01;32myum-builddep[0m
+-rwxr-xr-x.   1 root root     11046 Oct 30 22:58 [01;32mverifytree[0m
+-rwxr-xr-x.   1 root root     16572 Oct 30 22:58 [01;32mshow-installed[0m
+-rwxr-xr-x.   1 root root     10371 Oct 30 22:58 [01;32mshow-changed-rco[0m
+-rwxr-xr-x.   1 root root      9959 Oct 30 22:58 [01;32mrepotrack[0m
+-rwxr-xr-x.   1 root root     14341 Oct 30 22:58 [01;32mreposync[0m
+-rwxr-xr-x.   1 root root     10315 Oct 30 22:58 [01;32mrepo-rss[0m
+-rwxr-xr-x.   1 root root     57013 Oct 30 22:58 [01;32mrepoquery[0m
+-rwxr-xr-x.   1 root root      7043 Oct 30 22:58 [01;32mrepomanage[0m
+-rwxr-xr-x.   1 root root      4191 Oct 30 22:58 [01;32mrepo-graph[0m
+-rwxr-xr-x.   1 root root     14301 Oct 30 22:58 [01;32mrepodiff[0m
+-rwxr-xr-x.   1 root root     11699 Oct 30 22:58 [01;32mrepoclosure[0m
+-rwxr-xr-x.   1 root root     17803 Oct 30 22:58 [01;32mpackage-cleanup[0m
+-rwxr-xr-x.   1 root root      8347 Oct 30 22:58 [01;32mneeds-restarting[0m
+-rwxr-xr-x.   1 root root      4371 Oct 30 22:58 [01;32mfind-repos-of-install[0m
+-rwxr-xr-x.   1 root root      8071 Oct 30 22:58 [01;32mdebuginfo-install[0m
+-rwxr-xr-x.   1 root root    146712 Oct 30 23:02 [01;32mkmod[0m
+-rwxr-xr-x.   1 root root     24456 Oct 30 23:03 [01;32mgsettings[0m
+-rwxr-xr-x.   1 root root     45512 Oct 30 23:03 [01;32mglib-compile-schemas[0m
+-rwxr-xr-x.   1 root root     11672 Oct 30 23:03 [01;32mgio-querymodules-64[0m
+-rwxr-xr-x.   1 root root     75248 Oct 30 23:03 [01;32mgio[0m
+-rwxr-xr-x.   1 root root     41208 Oct 30 23:03 [01;32mgdbus[0m
+-rwxr-xr-x.   1 root root     20016 Oct 30 23:03 [01;32mgapplication[0m
+-rwxr-xr-x.   1 root root      6098 Oct 30 23:08 [01;32mrsyslog-recover-qi.pl[0m
+-rwxr-xr-x.   1 root root        78 Oct 30 23:46 [01;32mpydoc[0m
+-rwxr-xr-x.   1 root root      7216 Oct 30 23:46 [01;32mpython2.7[0m
+---x--x--x.   1 root root     57536 Oct 31 00:36 [01;32msudoreplay[0m
+---s--x--x.   1 root root    147392 Oct 31 00:36 [37;41msudo[0m
+-rwxr-xr-x.   1 root root    247512 Oct 31 00:36 [01;32mcvtsudoers[0m
+-rwxr-xr-x.   1 root root     11328 Nov  2 16:19 [01;32mdbus-uuidgen[0m
+-rwxr-xr-x.   1 root root     15480 Nov  2 16:19 [01;32mdbus-update-activation-environment[0m
+-rwxr-xr-x.   1 root root     23768 Nov  2 16:19 [01;32mdbus-test-tool[0m
+-rwxr-xr-x.   1 root root     27800 Nov  2 16:19 [01;32mdbus-send[0m
+-rwxr-xr-x.   1 root root     15408 Nov  2 16:19 [01;32mdbus-run-session[0m
+-rwxr-xr-x.   1 root root     23760 Nov  2 16:19 [01;32mdbus-monitor[0m
+-rwxr-xr-x.   1 root root    223320 Nov  2 16:19 [01;32mdbus-daemon[0m
+-rwxr-xr-x.   1 root root     11344 Nov  2 16:19 [01;32mdbus-cleanup-sockets[0m
+-rwxr-xr-x.   1 root root      3013 Nov  2 17:40 [01;32mmkinitrd[0m
+-rwxr-xr-x.   1 root root      6410 Nov  2 17:40 [01;32mlsinitrd[0m
+-rwxr-xr-x.   1 root root     56986 Nov  2 17:40 [01;32mdracut[0m
+-rwxr-xr-x.   1 root root    156720 Nov  4 16:55 [01;32mcurl[0m
+-rwxr-xr-x.   1 root root     31410 Nov  4 17:10 [01;32mkdumpctl[0m
+-rwxr-xr-x.   1 root root       801 Nov  5 01:53 [01;32myum[0m
+-rwxr-xr-x.   1 root root       313 Nov 16 19:17 [01;32mcloud-init[0m
+-rwxr-xr-x.   2 root root    810448 Nov 19 16:06 [01;32mgit-upload-pack[0m
+-rwxr-xr-x. 113 root root   1523792 Nov 19 16:06 [01;32mgit-upload-archive[0m
+-rwxr-xr-x.   2 root root    735288 Nov 19 16:06 [01;32mgit-shell[0m
+-rwxr-xr-x. 113 root root   1523792 Nov 19 16:06 [01;32mgit-receive-pack[0m
+-rwxr-xr-x. 113 root root   1523792 Nov 19 16:06 [01;32mgit[0m
+-rwsr-xr-x.   1 root root     57664 Nov 20 14:22 [37;41mcrontab[0m
+-rwxr-xr-x.   1 root root      4531 Jan 21 22:09 [01;32mpl2pm[0m
+-rwxr-xr-x.   1 root root     18459 Jan 21 22:09 [01;32msplain[0m
+-rwxr-xr-x.   2 root root     53329 Jan 21 22:09 [01;32ms2p[0m
+-rwxr-xr-x.   2 root root     36607 Jan 21 22:09 [01;32mpstruct[0m
+-rwxr-xr-x.   2 root root     53329 Jan 21 22:09 [01;32mpsed[0m
+-rwxr-xr-x.   1 root root      4096 Jan 21 22:09 [01;32mpod2html[0m
+-rwxr-xr-x.   2 root root     44351 Jan 21 22:09 [01;32mperlthanks[0m
+-rwxr-xr-x.   2 root root     44351 Jan 21 22:09 [01;32mperlbug[0m
+-rwxr-xr-x.   1 root root     28310 Jan 21 22:09 [01;32mh2ph[0m
+-rwxr-xr-x.   1 root root     23614 Jan 21 22:09 [01;32mfind2perl[0m
+-rwxr-xr-x.   2 root root     36607 Jan 21 22:09 [01;32mc2ph[0m
+-rwxr-xr-x.   2 root root     11488 Jan 21 22:10 [01;32mperl5.16.3[0m
+-rwxr-xr-x.   2 root root     11488 Jan 21 22:10 [01;32mperl[0m
+-rwxr-xr-x.   1 root root    107904 Jan 21 22:10 [01;32ma2p[0m
+-rwxr-xr-x.   1 root root      7339 Jan 29 17:29 [01;32mtzselect[0m
+-rwxr-xr-x.   1 root root      3336 Jan 29 17:29 [01;32mcatchsegv[0m
+-rwxr-xr-x.   1 root root      4341 Jan 29 17:30 [01;32msotruss[0m
+-rwxr-xr-x.   1 root root      5302 Jan 29 17:30 [01;32mldd[0m
+-rwxr-xr-x.   1 root root     17939 Jan 29 17:46 [01;32msandbox[0m
+-rwxr-xr-x.   1 root root     13430 Jan 29 17:46 [01;32mchcat[0m
+-rwxr-xr-x.   1 root root     14554 Jan 29 17:46 [01;32maudit2allow[0m
+-rwxr-xr-x.   1 root root     15760 Jan 29 17:46 [01;32msemodule_package[0m
+-rwxr-xr-x.   1 root root     24728 Jan 29 17:46 [01;32msecon[0m
+-rwxr-xr-x.   1 root root     28824 Jan 29 17:55 [01;32msprof[0m
+-rwxr-xr-x.   1 root root    103168 Jan 29 17:55 [01;32mrpcgen[0m
+-rwxr-xr-x.   1 root root     19264 Jan 29 17:55 [01;32mpldd[0m
+-rwxr-xr-x.   1 root root    339632 Jan 29 17:55 [01;32mlocaledef[0m
+-rwxr-xr-x.   1 root root     46616 Jan 29 17:55 [01;32mlocale[0m
+-rwxr-xr-x.   1 root root     26528 Jan 29 17:55 [01;32mgetconf[0m
+-rwxr-xr-x.   1 root root     24976 Jan 29 17:55 [01;32mmakedb[0m
+-rwxr-xr-x.   1 root root     69688 Jan 29 17:55 [01;32miconv[0m
+-rwxr-xr-x.   1 root root     35680 Jan 29 17:55 [01;32mgetent[0m
+-rwxr-xr-x.   1 root root     28104 Jan 29 17:55 [01;32mgencat[0m
+-rwxr-xr-x.   1 root root      1668 Jan 30 13:58 [01;32mgrub2-kbdcomp[0m
+-rwxr-xr-x.   1 root root    769672 Jan 30 13:58 [01;32mgrub2-syslinux2cfg[0m
+-rwxr-xr-x.   1 root root    298368 Jan 30 13:58 [01;32mgrub2-script-check[0m
+-rwxr-xr-x.   1 root root    842904 Jan 30 13:58 [01;32mgrub2-render-label[0m
+-rwxr-xr-x.   1 root root    538880 Jan 30 13:58 [01;32mgrub2-mkstandalone[0m
+-rwxr-xr-x.   1 root root   1025760 Jan 30 13:58 [01;32mgrub2-mkrescue[0m
+-rwxr-xr-x.   1 root root    260568 Jan 30 13:58 [01;32mgrub2-mkrelpath[0m
+-rwxr-xr-x.   1 root root    273720 Jan 30 13:58 [01;32mgrub2-mkpasswd-pbkdf2[0m
+-rwxr-xr-x.   1 root root    435960 Jan 30 13:58 [01;32mgrub2-mknetdir[0m
+-rwxr-xr-x.   1 root root    267120 Jan 30 13:58 [01;32mgrub2-mklayout[0m
+-rwxr-xr-x.   1 root root    384136 Jan 30 13:58 [01;32mgrub2-mkimage[0m
+-rwxr-xr-x.   1 root root    290400 Jan 30 13:58 [01;32mgrub2-mkfont[0m
+-rwxr-xr-x.   1 root root    243520 Jan 30 13:58 [01;32mgrub2-menulst2cfg[0m
+-rwxr-xr-x.   1 root root    260920 Jan 30 13:58 [01;32mgrub2-glue-efi[0m
+-rwxr-xr-x.   1 root root   1062640 Jan 30 13:58 [01;32mgrub2-fstest[0m
+-rwxr-xr-x.   1 root root    833888 Jan 30 13:58 [01;32mgrub2-file[0m
+-rwxr-xr-x.   1 root root    401448 Jan 30 13:58 [01;32mgrub2-editenv[0m
+-rwxr-xr-x.   1 root root      1539 Jan 31 21:34 [01;32msetup-nsssysinit.sh[0m
+-rwxr-xr-x.   1 root root    112976 Jan 31 21:34 [01;32mssltap[0m
+-rwxr-xr-x.   1 root root     96728 Jan 31 21:34 [01;32msignver[0m
+-rwxr-xr-x.   1 root root    172072 Jan 31 21:34 [01;32msigntool[0m
+-rwxr-xr-x.   1 root root     93216 Jan 31 21:34 [01;32mpk12util[0m
+-rwxr-xr-x.   1 root root    157384 Jan 31 21:34 [01;32mmodutil[0m
+-rwxr-xr-x.   1 root root    117696 Jan 31 21:34 [01;32mcrlutil[0m
+-rwxr-xr-x.   1 root root    104944 Jan 31 21:34 [01;32mcmsutil[0m
+-rwxr-xr-x.   1 root root    171616 Jan 31 21:34 [01;32mcertutil[0m
+-rwxr-xr-x.   1 root root     10536 Feb  1 15:16 [01;32mx86_energy_perf_policy[0m
+-rwxr-xr-x.   1 root root      6344 Feb  1 15:16 [01;32mcentrino-decode[0m
+-rwxr-xr-x.   1 root root    111288 Feb  1 15:16 [01;32mturbostat[0m
+-rwxr-xr-x.   1 root root     31928 Feb  1 15:16 [01;32mtmon[0m
+-rwxr-xr-x.   1 root root      6352 Feb  1 15:16 [01;32mpowernow-k8-decode[0m
+-rwxr-xr-x.   1 root root     67992 Feb  1 15:16 [01;32mcpupower[0m
+-rwxr-xr-x.   1 root root      4489 Feb 19 17:34 [01;32mkernel-install[0m
+-rwxr-xr-x.   1 root root      3979 Feb 19 17:35 [01;32msystemd-sysv-convert[0m
+-rwxr-xr-x.   1 root root    424320 Feb 19 17:35 [01;32mudevadm[0m
+-rwxr-xr-x.   1 root root    338216 Feb 19 17:35 [01;32mtimedatectl[0m
+-rwxr-xr-x.   1 root root     86872 Feb 19 17:35 [01;32msystemd-tty-ask-password-agent[0m
+-rwxr-xr-x.   1 root root    149752 Feb 19 17:35 [01;32msystemd-tmpfiles[0m
+-rwxr-xr-x.   1 root root    313224 Feb 19 17:35 [01;32msystemd-stdio-bridge[0m
+-rwxr-xr-x.   1 root root    396408 Feb 19 17:35 [01;32msystemd-run[0m
+-rwxr-xr-x.   1 root root     53496 Feb 19 17:35 [01;32msystemd-path[0m
+-rwxr-xr-x.   1 root root    559056 Feb 19 17:35 [01;32msystemd-nspawn[0m
+-rwxr-xr-x.   1 root root     49336 Feb 19 17:35 [01;32msystemd-notify[0m
+-rwxr-xr-x.   1 root root     53584 Feb 19 17:35 [01;32msystemd-machine-id-setup[0m
+-rwxr-xr-x.   1 root root    313288 Feb 19 17:35 [01;32msystemd-inhibit[0m
+-rwxr-xr-x.   1 root root     87480 Feb 19 17:35 [01;32msystemd-hwdb[0m
+-rwxr-xr-x.   1 root root    104088 Feb 19 17:35 [01;32msystemd-firstboot[0m
+-rwxr-xr-x.   1 root root     49432 Feb 19 17:35 [01;32msystemd-escape[0m
+-rwxr-xr-x.   1 root root     41016 Feb 19 17:35 [01;32msystemd-detect-virt[0m
+-rwxr-xr-x.   1 root root     78784 Feb 19 17:35 [01;32msystemd-delta[0m
+-rwxr-xr-x.   1 root root     87256 Feb 19 17:35 [01;32msystemd-cgtop[0m
+-rwxr-xr-x.   1 root root    334200 Feb 19 17:35 [01;32msystemd-cgls[0m
+-rwxr-xr-x.   1 root root     41048 Feb 19 17:35 [01;32msystemd-cat[0m
+-rwxr-xr-x.   1 root root     61904 Feb 19 17:35 [01;32msystemd-ask-password[0m
+-rwxr-xr-x.   1 root root   1550080 Feb 19 17:35 [01;32msystemd-analyze[0m
+-rwxr-xr-x.   1 root root    717728 Feb 19 17:35 [01;32msystemctl[0m
+-rwxr-xr-x.   1 root root    546800 Feb 19 17:35 [01;32mmachinectl[0m
+-rwxr-xr-x.   1 root root    501432 Feb 19 17:35 [01;32mloginctl[0m
+-rwxr-xr-x.   1 root root    334104 Feb 19 17:35 [01;32mlocalectl[0m
+-rwxr-xr-x.   1 root root    550880 Feb 19 17:35 [01;32mjournalctl[0m
+-rwxr-xr-x.   1 root root    325800 Feb 19 17:35 [01;32mhostnamectl[0m
+-rwxr-xr-x.   1 root root    158320 Feb 19 17:35 [01;32mcoredumpctl[0m
+-rwxr-xr-x.   1 root root    412912 Feb 19 17:35 [01;32mbusctl[0m
+-rwxr-xr-x.   1 root root     74880 Feb 19 17:35 [01;32mbootctl[0m
+lrwxrwxrwx.   1 root root        10 Feb 28 11:46 [01;36mbashbug[0m -> [01;32mbashbug-64[0m
+lrwxrwxrwx.   1 root root         4 Feb 28 11:46 [01;36msh[0m -> [01;32mbash[0m
+lrwxrwxrwx.   1 root root        19 Feb 28 11:46 [01;36msetup-nsssysinit[0m -> [01;32msetup-nsssysinit.sh[0m
+lrwxrwxrwx.   1 root root         9 Feb 28 11:47 [01;36mpython2[0m -> [01;32mpython2.7[0m
+lrwxrwxrwx.   1 root root         7 Feb 28 11:47 [01;36mpython[0m -> [01;32mpython2[0m
+lrwxrwxrwx.   1 root root         6 Feb 28 11:47 [01;36msg[0m -> [37;41mnewgrp[0m
+lrwxrwxrwx.   1 root root        20 Feb 28 11:47 [01;36mld[0m -> [01;32m/etc/alternatives/ld[0m
+lrwxrwxrwx.   1 root root        13 Feb 28 11:47 [01;36mrpmquery[0m -> [01;32m../../bin/rpm[0m
+lrwxrwxrwx.   1 root root        13 Feb 28 11:47 [01;36mrpmverify[0m -> [01;32m../../bin/rpm[0m
+lrwxrwxrwx.   1 root root         4 Feb 28 11:47 [01;36mgpg[0m -> [01;32mgpg2[0m
+lrwxrwxrwx.   1 root root         5 Feb 28 11:47 [01;36mgpgv[0m -> [01;32mgpgv2[0m
+lrwxrwxrwx.   1 root root         3 Feb 28 11:47 [01;36mgtar[0m -> [01;32mtar[0m
+lrwxrwxrwx.   1 root root         2 Feb 28 11:47 [01;36mex[0m -> [01;32mvi[0m
+lrwxrwxrwx.   1 root root         2 Feb 28 11:47 [01;36mrview[0m -> [01;32mvi[0m
+lrwxrwxrwx.   1 root root         2 Feb 28 11:47 [01;36mrvi[0m -> [01;32mvi[0m
+lrwxrwxrwx.   1 root root         2 Feb 28 11:47 [01;36mview[0m -> [01;32mvi[0m
+lrwxrwxrwx.   1 root root         7 Feb 28 11:47 [01;36mi386[0m -> [01;32msetarch[0m
+lrwxrwxrwx.   1 root root         7 Feb 28 11:47 [01;36mlinux32[0m -> [01;32msetarch[0m
+lrwxrwxrwx.   1 root root         7 Feb 28 11:47 [01;36mlinux64[0m -> [01;32msetarch[0m
+lrwxrwxrwx.   1 root root         7 Feb 28 11:47 [01;36mx86_64[0m -> [01;32msetarch[0m
+lrwxrwxrwx.   1 root root        11 Feb 28 11:47 [01;36msystemd-coredumpctl[0m -> [01;32mcoredumpctl[0m
+lrwxrwxrwx.   1 root root         8 Feb 28 11:47 [01;36msystemd-loginctl[0m -> [01;32mloginctl[0m
+lrwxrwxrwx.   1 root root        11 Feb 28 11:47 [01;36maudit2why[0m -> [01;32maudit2allow[0m
+lrwxrwxrwx.   1 root root         6 Feb 28 11:47 [01;36mopen[0m -> [01;32mopenvt[0m
+lrwxrwxrwx.   1 root root         9 Feb 28 11:47 [01;36mpsfgettable[0m -> [01;32mpsfxtable[0m
+lrwxrwxrwx.   1 root root         9 Feb 28 11:47 [01;36mpsfaddtable[0m -> [01;32mpsfxtable[0m
+lrwxrwxrwx.   1 root root         9 Feb 28 11:47 [01;36mpsfstriptable[0m -> [01;32mpsfxtable[0m
+lrwxrwxrwx.   1 root root        31 Feb 28 11:47 [01;36mnewaliases.postfix[0m -> [01;32m../../usr/sbin/sendmail.postfix[0m
+lrwxrwxrwx.   1 root root        31 Feb 28 11:47 [01;36mmailq.postfix[0m -> [01;32m../../usr/sbin/sendmail.postfix[0m
+lrwxrwxrwx.   1 root root        27 Feb 28 11:47 [01;36mrmail[0m -> [01;32m/etc/alternatives/mta-rmail[0m
+lrwxrwxrwx.   1 root root        32 Feb 28 11:47 [01;36mnewaliases[0m -> [01;32m/etc/alternatives/mta-newaliases[0m
+lrwxrwxrwx.   1 root root        27 Feb 28 11:47 [01;36mmailq[0m -> [01;32m/etc/alternatives/mta-mailq[0m
+lrwxrwxrwx.   1 root root        18 Feb 28 11:47 [01;36mscsi-rescan[0m -> [01;32mrescan-scsi-bus.sh[0m
+lrwxrwxrwx.   1 root root         4 Feb 28 11:47 [01;36msudoedit[0m -> [37;41msudo[0m
+lrwxrwxrwx.   1 root root         6 Feb 28 11:47 [01;36mapropos[0m -> [01;32mwhatis[0m
+lrwxrwxrwx.   1 root root        23 Feb 28 11:47 [01;36miptables-xml[0m -> [01;32m/usr/sbin/xtables-multi[0m
+lrwxrwxrwx.   1 root root        27 Mar  1 07:11 [01;36munpack200[0m -> [01;32m/etc/alternatives/unpack200[0m
+lrwxrwxrwx.   1 root root        27 Mar  1 07:11 [01;36mtnameserv[0m -> [01;32m/etc/alternatives/tnameserv[0m
+lrwxrwxrwx.   1 root root        28 Mar  1 07:11 [01;36mservertool[0m -> [01;32m/etc/alternatives/servertool[0m
+lrwxrwxrwx.   1 root root        29 Mar  1 07:11 [01;36mrmiregistry[0m -> [01;32m/etc/alternatives/rmiregistry[0m
+lrwxrwxrwx.   1 root root        22 Mar  1 07:11 [01;36mrmid[0m -> [01;32m/etc/alternatives/rmid[0m
+lrwxrwxrwx.   1 root root        28 Mar  1 07:11 [01;36mpolicytool[0m -> [01;32m/etc/alternatives/policytool[0m
+lrwxrwxrwx.   1 root root        25 Mar  1 07:11 [01;36mpack200[0m -> [01;32m/etc/alternatives/pack200[0m
+lrwxrwxrwx.   1 root root        22 Mar  1 07:11 [01;36morbd[0m -> [01;32m/etc/alternatives/orbd[0m
+lrwxrwxrwx.   1 root root        25 Mar  1 07:11 [01;36mkeytool[0m -> [01;32m/etc/alternatives/keytool[0m
+lrwxrwxrwx.   1 root root        21 Mar  1 07:11 [01;36mjjs[0m -> [01;32m/etc/alternatives/jjs[0m
+lrwxrwxrwx.   1 root root        22 Mar  1 07:11 [01;36mjava[0m -> [01;32m/etc/alternatives/java[0m
+lrwxrwxrwx.   1 root root        23 Mar  1 07:11 [01;36mjdeps[0m -> [01;32m/etc/alternatives/jdeps[0m
+lrwxrwxrwx.   1 root root        21 Mar  1 07:11 [01;36mjdb[0m -> [01;32m/etc/alternatives/jdb[0m
+lrwxrwxrwx.   1 root root        26 Mar  1 07:11 [01;36mjconsole[0m -> [01;32m/etc/alternatives/jconsole[0m
+lrwxrwxrwx.   1 root root        22 Mar  1 07:11 [01;36mjcmd[0m -> [01;32m/etc/alternatives/jcmd[0m
+lrwxrwxrwx.   1 root root        23 Mar  1 07:11 [01;36mjavap[0m -> [01;32m/etc/alternatives/javap[0m
+lrwxrwxrwx.   1 root root        23 Mar  1 07:11 [01;36mjavah[0m -> [01;32m/etc/alternatives/javah[0m
+lrwxrwxrwx.   1 root root        25 Mar  1 07:11 [01;36mjavadoc[0m -> [01;32m/etc/alternatives/javadoc[0m
+lrwxrwxrwx.   1 root root        23 Mar  1 07:11 [01;36mjavac[0m -> [01;32m/etc/alternatives/javac[0m
+lrwxrwxrwx.   1 root root        27 Mar  1 07:11 [01;36mjarsigner[0m -> [01;32m/etc/alternatives/jarsigner[0m
+lrwxrwxrwx.   1 root root        21 Mar  1 07:11 [01;36mjar[0m -> [01;32m/etc/alternatives/jar[0m
+lrwxrwxrwx.   1 root root        22 Mar  1 07:11 [01;36midlj[0m -> [01;32m/etc/alternatives/idlj[0m
+lrwxrwxrwx.   1 root root        26 Mar  1 07:11 [01;36mextcheck[0m -> [01;32m/etc/alternatives/extcheck[0m
+lrwxrwxrwx.   1 root root        30 Mar  1 07:11 [01;36mappletviewer[0m -> [01;32m/etc/alternatives/appletviewer[0m
+lrwxrwxrwx.   1 root root        21 Mar  1 07:11 [01;36mxjc[0m -> [01;32m/etc/alternatives/xjc[0m
+lrwxrwxrwx.   1 root root        26 Mar  1 07:11 [01;36mwsimport[0m -> [01;32m/etc/alternatives/wsimport[0m
+lrwxrwxrwx.   1 root root        23 Mar  1 07:11 [01;36mwsgen[0m -> [01;32m/etc/alternatives/wsgen[0m
+lrwxrwxrwx.   1 root root        27 Mar  1 07:11 [01;36mserialver[0m -> [01;32m/etc/alternatives/serialver[0m
+lrwxrwxrwx.   1 root root        27 Mar  1 07:11 [01;36mschemagen[0m -> [01;32m/etc/alternatives/schemagen[0m
+lrwxrwxrwx.   1 root root        22 Mar  1 07:11 [01;36mrmic[0m -> [01;32m/etc/alternatives/rmic[0m
+lrwxrwxrwx.   1 root root        30 Mar  1 07:11 [01;36mnative2ascii[0m -> [01;32m/etc/alternatives/native2ascii[0m
+lrwxrwxrwx.   1 root root        24 Mar  1 07:11 [01;36mjstatd[0m -> [01;32m/etc/alternatives/jstatd[0m
+lrwxrwxrwx.   1 root root        23 Mar  1 07:11 [01;36mjstat[0m -> [01;32m/etc/alternatives/jstat[0m
+lrwxrwxrwx.   1 root root        24 Mar  1 07:11 [01;36mjstack[0m -> [01;32m/etc/alternatives/jstack[0m
+lrwxrwxrwx.   1 root root        27 Mar  1 07:11 [01;36mjsadebugd[0m -> [01;32m/etc/alternatives/jsadebugd[0m
+lrwxrwxrwx.   1 root root        28 Mar  1 07:11 [01;36mjrunscript[0m -> [01;32m/etc/alternatives/jrunscript[0m
+lrwxrwxrwx.   1 root root        21 Mar  1 07:11 [01;36mjps[0m -> [01;32m/etc/alternatives/jps[0m
+lrwxrwxrwx.   1 root root        22 Mar  1 07:11 [01;36mjmap[0m -> [01;32m/etc/alternatives/jmap[0m
+lrwxrwxrwx.   1 root root        23 Mar  1 07:11 [01;36mjinfo[0m -> [01;32m/etc/alternatives/jinfo[0m
+lrwxrwxrwx.   1 root root        22 Mar  1 07:11 [01;36mjhat[0m -> [01;32m/etc/alternatives/jhat[0m
+]0;centos@ip-10-0-1-36:/usr/bin[centos@ip-10-0-1-36 bin]$ cd jvmjar [K[K[K[K[K[K[K[K[K[Kcd /use[Ker[K[Kr/lib/
+binfmt.d/         java/             jvm/              locale/           sendmail          udev/
+debug/            java-1.5.0/       jvm-commmon/      modprobe.d/       sendmail.postfix  yum-plugins/
+dracut/           java-1.6.0/       jvm-exports/      modules/          sse2/             
+firmware/         java-1.7.0/       jvm-private/      modules-load.d/   sysctl.d/         
+fontconfig/       java-1.8.0/       kbd/              polkit-1/         systemd/          
+games/            java-ext/         kdump/            python2.7/        tmpfiles.d/       
+grub/             jenkins/          kernel/           rpm/              tuned/            
+[centos@ip-10-0-1-36 bin]$ cd /usr/lib/java[K[K[Kvm
+]0;centos@ip-10-0-1-36:/usr/lib/jvm[centos@ip-10-0-1-36 jvm]$ ls -lrt
+total 0
+lrwxrwxrwx. 1 root root 51 Mar  1 07:11 [0m[01;36mjre-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64[0m -> [01;34mjava-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre[0m
+lrwxrwxrwx. 1 root root 21 Mar  1 07:11 [01;36mjre[0m -> [01;34m/etc/alternatives/jre[0m
+lrwxrwxrwx. 1 root root 29 Mar  1 07:11 [01;36mjre-openjdk[0m -> [01;34m/etc/alternatives/jre_openjdk[0m
+lrwxrwxrwx. 1 root root 27 Mar  1 07:11 [01;36mjre-1.8.0[0m -> [01;34m/etc/alternatives/jre_1.8.0[0m
+lrwxrwxrwx. 1 root root 35 Mar  1 07:11 [01;36mjre-1.8.0-openjdk[0m -> [01;34m/etc/alternatives/jre_1.8.0_openjdk[0m
+drwxr-xr-x. 7 root root 68 Mar  1 07:11 [01;34mjava-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64[0m
+lrwxrwxrwx. 1 root root 26 Mar  1 07:11 [01;36mjava[0m -> [01;34m/etc/alternatives/java_sdk[0m
+lrwxrwxrwx. 1 root root 34 Mar  1 07:11 [01;36mjava-openjdk[0m -> [01;34m/etc/alternatives/java_sdk_openjdk[0m
+lrwxrwxrwx. 1 root root 32 Mar  1 07:11 [01;36mjava-1.8.0[0m -> [01;34m/etc/alternatives/java_sdk_1.8.0[0m
+lrwxrwxrwx. 1 root root 40 Mar  1 07:11 [01;36mjava-1.8.0-openjdk[0m -> [01;34m/etc/alternatives/java_sdk_1.8.0_openjdk[0m
+]0;centos@ip-10-0-1-36:/usr/lib/jvm[centos@ip-10-0-1-36 jvm]$ xc[K[Kcd java-1.8.0
+]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0[centos@ip-10-0-1-36 java-1.8.0]$ ls -lrt
+total 4
+drwxr-xr-x. 4 root root   28 Mar  1 07:11 [0m[01;34mjre[0m
+drwxr-xr-x. 2 root root 4096 Mar  1 07:11 [01;34mbin[0m
+drwxr-xr-x. 3 root root  132 Mar  1 07:11 [01;34minclude[0m
+drwxr-xr-x. 3 root root  144 Mar  1 07:11 [01;34mlib[0m
+drwxr-xr-x. 2 root root  204 Mar  1 07:11 [01;34mtapset[0m
+]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0[centos@ip-10-0-1-36 java-1.8.0]$ cd bin/
+]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0/bin[centos@ip-10-0-1-36 bin]$ pwd
+/usr/lib/jvm/java-1.8.0/bin
+]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0/bin[centos@ip-10-0-1-36 bin]$ cd ..
+]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0[centos@ip-10-0-1-36 java-1.8.0]$ cd.[K ,[K..
+]0;centos@ip-10-0-1-36:/usr/lib/jvm[centos@ip-10-0-1-36 jvm]$ cd java-
+java-1.8.0/                                      java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/
+java-1.8.0-openjdk/                              java-openjdk/
+[centos@ip-10-0-1-36 jvm]$ cd java-1.8.0-openjdk/bin/
+]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0-openjdk/bin[centos@ip-10-0-1-36 bin]$ pwd
+/usr/lib/jvm/java-1.8.0-openjdk/bin
+]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0-openjdk/bin[centos@ip-10-0-1-36 bin]$ cd ../..
+]0;centos@ip-10-0-1-36:/usr/lib/jvm[centos@ip-10-0-1-36 jvm]$ ls -rlt
+total 0
+lrwxrwxrwx. 1 root root 51 Mar  1 07:11 [0m[01;36mjre-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64[0m -> [01;34mjava-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre[0m
+lrwxrwxrwx. 1 root root 21 Mar  1 07:11 [01;36mjre[0m -> [01;34m/etc/alternatives/jre[0m
+lrwxrwxrwx. 1 root root 29 Mar  1 07:11 [01;36mjre-openjdk[0m -> [01;34m/etc/alternatives/jre_openjdk[0m
+lrwxrwxrwx. 1 root root 27 Mar  1 07:11 [01;36mjre-1.8.0[0m -> [01;34m/etc/alternatives/jre_1.8.0[0m
+lrwxrwxrwx. 1 root root 35 Mar  1 07:11 [01;36mjre-1.8.0-openjdk[0m -> [01;34m/etc/alternatives/jre_1.8.0_openjdk[0m
+drwxr-xr-x. 7 root root 68 Mar  1 07:11 [01;34mjava-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64[0m
+lrwxrwxrwx. 1 root root 26 Mar  1 07:11 [01;36mjava[0m -> [01;34m/etc/alternatives/java_sdk[0m
+lrwxrwxrwx. 1 root root 34 Mar  1 07:11 [01;36mjava-openjdk[0m -> [01;34m/etc/alternatives/java_sdk_openjdk[0m
+lrwxrwxrwx. 1 root root 32 Mar  1 07:11 [01;36mjava-1.8.0[0m -> [01;34m/etc/alternatives/java_sdk_1.8.0[0m
+lrwxrwxrwx. 1 root root 40 Mar  1 07:11 [01;36mjava-1.8.0-openjdk[0m -> [01;34m/etc/alternatives/java_sdk_1.8.0_openjdk[0m
+]0;centos@ip-10-0-1-36:/usr/lib/jvm[centos@ip-10-0-1-36 jvm]$ vf [K[K[Kcd java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64
+]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64[centos@ip-10-0-1-36 java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64]$ pwd
+/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64
+]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64[centos@ip-10-0-1-36 java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64]$ maven --version
+-bash: maven: command not found
+]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64[centos@ip-10-0-1-36 java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64]$ maven --version[1Pversion
+-bash: maven: command not found
+]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64[centos@ip-10-0-1-36 java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64]$ c;ear[K[K[K[Klear
+[3;J[H[2J]0;centos@ip-10-0-1-36:/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64[centos@ip-10-0-1-36 java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64]$ cd ..
+]0;centos@ip-10-0-1-36:/usr/lib/jvm[centos@ip-10-0-1-36 jvm]$ ls -rlt
+total 0
+lrwxrwxrwx. 1 root root 51 Mar  1 07:11 [0m[01;36mjre-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64[0m -> [01;34mjava-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64/jre[0m
+lrwxrwxrwx. 1 root root 21 Mar  1 07:11 [01;36mjre[0m -> [01;34m/etc/alternatives/jre[0m
+lrwxrwxrwx. 1 root root 29 Mar  1 07:11 [01;36mjre-openjdk[0m -> [01;34m/etc/alternatives/jre_openjdk[0m
+lrwxrwxrwx. 1 root root 27 Mar  1 07:11 [01;36mjre-1.8.0[0m -> [01;34m/etc/alternatives/jre_1.8.0[0m
+lrwxrwxrwx. 1 root root 35 Mar  1 07:11 [01;36mjre-1.8.0-openjdk[0m -> [01;34m/etc/alternatives/jre_1.8.0_openjdk[0m
+drwxr-xr-x. 7 root root 68 Mar  1 07:11 [01;34mjava-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86_64[0m
+lrwxrwxrwx. 1 root root 26 Mar  1 07:11 [01;36mjava[0m -> [01;34m/etc/alternatives/java_sdk[0m
+lrwxrwxrwx. 1 root root 34 Mar  1 07:11 [01;36mjava-openjdk[0m -> [01;34m/etc/alternatives/java_sdk_openjdk[0m
+lrwxrwxrwx. 1 root root 32 Mar  1 07:11 [01;36mjava-1.8.0[0m -> [01;34m/etc/alternatives/java_sdk_1.8.0[0m
+lrwxrwxrwx. 1 root root 40 Mar  1 07:11 [01;36mjava-1.8.0-openjdk[0m -> [01;34m/etc/alternatives/java_sdk_1.8.0_openjdk[0m
+]0;centos@ip-10-0-1-36:/usr/lib/jvm[centos@ip-10-0-1-36 jvm]$ pwd
+/usr/lib/jvm
+]0;centos@ip-10-0-1-36:/usr/lib/jvm[centos@ip-10-0-1-36 jvm]$ cd /[K[K ~
+]0;centos@ip-10-0-1-36:~[centos@ip-10-0-1-36 ~]$ ls -lrt
+total 0
+drwxrwxr-x. 5 centos centos 116 Mar  1 05:39 [0m[01;34msimple-java-maven-app[0m
+drwxrwxr-x. 3 centos centos  22 Mar  1 06:18 [01;34mshell_scripts_XX[0m
+drwxrwxr-x. 3 centos centos  36 Mar  1 06:54 [01;34mgit-demo[0m
+]0;centos@ip-10-0-1-36:~[centos@ip-10-0-1-36 ~]$ cd simple-java-maven-app/
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ ls -lrt
+total 8
+-rw-rw-r--. 1 centos centos  744 Mar  1 05:39 README.md
+-rw-rw-r--. 1 centos centos 1196 Mar  1 05:39 pom.xml
+drwxrwxr-x. 3 centos centos   40 Mar  1 05:39 [0m[01;34mjenkins[0m
+drwxrwxr-x. 4 centos centos   30 Mar  1 05:39 [01;34msrc[0m
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ cd h[Kjenkins/
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app/jenkins[centos@ip-10-0-1-36 jenkins]$ ls -lrt
+total 4
+drwxrwxr-x. 2 centos centos  24 Mar  1 05:39 [0m[01;34mscripts[0m
+-rw-rw-r--. 1 centos centos 630 Mar  1 05:39 Jenkinsfile
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app/jenkins[centos@ip-10-0-1-36 jenkins]$ cd scripts/
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app/jenkins/scripts[centos@ip-10-0-1-36 scripts]$ ls -lrt
+total 4
+-rwxrwxr-x. 1 centos centos 1024 Mar  1 05:39 [0m[01;32mdeliver.sh[0m
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app/jenkins/scripts[centos@ip-10-0-1-36 scripts]$ cd ..
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app/jenkins[centos@ip-10-0-1-36 jenkins]$ cd ..
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ cd /var/lib/jenkins/workspace/simple-java-maven-app/target/
+]0;centos@ip-10-0-1-36:/var/lib/jenkins/workspace/simple-java-maven-app/target[centos@ip-10-0-1-36 target]$ ls -lrt
+total 4
+drwxr-xr-x. 3 jenkins jenkins   35 Mar  1 08:07 [0m[01;34mmaven-status[0m
+drwxr-xr-x. 3 jenkins jenkins   17 Mar  1 08:07 [01;34mclasses[0m
+drwxr-xr-x. 3 jenkins jenkins   17 Mar  1 08:07 [01;34mtest-classes[0m
+drwxr-xr-x. 2 jenkins jenkins   85 Mar  1 08:07 [01;34msurefire-reports[0m
+drwxr-xr-x. 2 jenkins jenkins   28 Mar  1 08:07 [01;34mmaven-archiver[0m
+-rw-r--r--. 1 jenkins jenkins 2625 Mar  1 08:07 [01;31mmy-app-1.0-SNAPSHOT.jar[0m
+]0;centos@ip-10-0-1-36:/var/lib/jenkins/workspace/simple-java-maven-app/target[centos@ip-10-0-1-36 target]$ cd /[K[K[K[Kcd ~
+]0;centos@ip-10-0-1-36:~[centos@ip-10-0-1-36 ~]$ cd simple-java-maven-app/
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ pwd
+/home/centos/simple-java-maven-app
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ cd ..
+]0;centos@ip-10-0-1-36:~[centos@ip-10-0-1-36 ~]$ ls -lrt
+total 0
+drwxrwxr-x. 5 centos centos 116 Mar  1 05:39 [0m[01;34msimple-java-maven-app[0m
+drwxrwxr-x. 3 centos centos  22 Mar  1 06:18 [01;34mshell_scripts_XX[0m
+drwxrwxr-x. 3 centos centos  36 Mar  1 06:54 [01;34mgit-demo[0m
+]0;centos@ip-10-0-1-36:~[centos@ip-10-0-1-36 ~]$ Using username "centos".
+Authenticating with public key "imported-openssh-key"
+Last login: Fri Mar  1 06:43:34 2019 from 125.22.111.162
+]0;centos@ip-10-0-1-36:~[?1034h[centos@ip-10-0-1-36 ~]$ cd [K[K[Kecho $JENKINS_HOME
+
+]0;centos@ip-10-0-1-36:~[centos@ip-10-0-1-36 ~]$ cd /var/lib/jenkins/workspace/simple-java-maven-app/target/
+]0;centos@ip-10-0-1-36:/var/lib/jenkins/workspace/simple-java-maven-app/target[centos@ip-10-0-1-36 target]$ ls -lrt
+total 4
+drwxr-xr-x. 3 jenkins jenkins   35 Mar  1 09:33 [0m[01;34mmaven-status[0m
+drwxr-xr-x. 3 jenkins jenkins   17 Mar  1 09:33 [01;34mclasses[0m
+drwxr-xr-x. 3 jenkins jenkins   17 Mar  1 09:33 [01;34mtest-classes[0m
+drwxr-xr-x. 2 jenkins jenkins   85 Mar  1 09:33 [01;34msurefire-reports[0m
+drwxr-xr-x. 2 jenkins jenkins   28 Mar  1 09:33 [01;34mmaven-archiver[0m
+-rw-r--r--. 1 jenkins jenkins 2625 Mar  1 09:33 [01;31mmy-app-1.0-SNAPSHOT.jar[0m
+]0;centos@ip-10-0-1-36:/var/lib/jenkins/workspace/simple-java-maven-app/target[centos@ip-10-0-1-36 target]$ ls -lrt
+total 4
+drwxr-xr-x. 3 jenkins jenkins   35 Mar  1 09:33 [0m[01;34mmaven-status[0m
+drwxr-xr-x. 3 jenkins jenkins   17 Mar  1 09:33 [01;34mclasses[0m
+drwxr-xr-x. 3 jenkins jenkins   17 Mar  1 09:33 [01;34mtest-classes[0m
+drwxr-xr-x. 2 jenkins jenkins   85 Mar  1 09:33 [01;34msurefire-reports[0m
+drwxr-xr-x. 2 jenkins jenkins   28 Mar  1 09:33 [01;34mmaven-archiver[0m
+-rw-r--r--. 1 jenkins jenkins 2625 Mar  1 09:33 [01;31mmy-app-1.0-SNAPSHOT.jar[0m
+]0;centos@ip-10-0-1-36:/var/lib/jenkins/workspace/simple-java-maven-app/target[centos@ip-10-0-1-36 target]$ ls -rlt
+total 4
+drwxr-xr-x. 3 jenkins jenkins   35 Mar  1 09:33 [0m[01;34mmaven-status[0m
+drwxr-xr-x. 3 jenkins jenkins   17 Mar  1 09:33 [01;34mclasses[0m
+drwxr-xr-x. 3 jenkins jenkins   17 Mar  1 09:33 [01;34mtest-classes[0m
+drwxr-xr-x. 2 jenkins jenkins   85 Mar  1 09:33 [01;34msurefire-reports[0m
+drwxr-xr-x. 2 jenkins jenkins   28 Mar  1 09:33 [01;34mmaven-archiver[0m
+-rw-r--r--. 1 jenkins jenkins 2625 Mar  1 09:33 [01;31mmy-app-1.0-SNAPSHOT.jar[0m
+]0;centos@ip-10-0-1-36:/var/lib/jenkins/workspace/simple-java-maven-app/target[centos@ip-10-0-1-36 target]$ cd surefire-reports
+]0;centos@ip-10-0-1-36:/var/lib/jenkins/workspace/simple-java-maven-app/target/surefire-reports[centos@ip-10-0-1-36 surefire-reports]$ ls -lrt
+total 16
+-rw-r--r--. 1 jenkins jenkins  269 Mar  1 09:33 com.mycompany.app.AppTest.txt
+-rw-r--r--. 1 jenkins jenkins 9159 Mar  1 09:33 TEST-com.mycompany.app.AppTest.xml
+]0;centos@ip-10-0-1-36:/var/lib/jenkins/workspace/simple-java-maven-app/target/surefire-reports[centos@ip-10-0-1-36 surefire-reports]$ cd /[K~/simple-java-maven-app/
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ checko[K[K[K[K[K[Kgit checkout master
+Already on 'master'
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ ls -rlt
+total 8
+-rw-rw-r--. 1 centos centos  744 Mar  1 05:39 README.md
+-rw-rw-r--. 1 centos centos 1196 Mar  1 05:39 pom.xml
+drwxrwxr-x. 3 centos centos   40 Mar  1 05:39 [0m[01;34mjenkins[0m
+drwxrwxr-x. 4 centos centos   30 Mar  1 05:39 [01;34msrc[0m
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ git pull
+Warning: Permanently added the RSA host key for IP address '192.30.255.113' to the list of known hosts.
+remote: Enumerating objects: 17, done.[K
+remote: Counting objects:   5% (1/17)   [Kremote: Counting objects:  11% (2/17)   [Kremote: Counting objects:  17% (3/17)   [Kremote: Counting objects:  23% (4/17)   [Kremote: Counting objects:  29% (5/17)   [Kremote: Counting objects:  35% (6/17)   [Kremote: Counting objects:  41% (7/17)   [Kremote: Counting objects:  47% (8/17)   [Kremote: Counting objects:  52% (9/17)   [Kremote: Counting objects:  58% (10/17)   [Kremote: Counting objects:  64% (11/17)   [Kremote: Counting objects:  70% (12/17)   [Kremote: Counting objects:  76% (13/17)   [Kremote: Counting objects:  82% (14/17)   [Kremote: Counting objects:  88% (15/17)   [Kremote: Counting objects:  94% (16/17)   [Kremote: Counting objects: 100% (17/17)   [Kremote: Counting objects: 100% (17/17), done.[K
+remote: Total 29 (delta 17), reused 17 (delta 17), pack-reused 12[K
+Unpacking objects:   3% (1/29)   Unpacking objects:   6% (2/29)   Unpacking objects:  10% (3/29)   Unpacking objects:  13% (4/29)   Unpacking objects:  17% (5/29)   Unpacking objects:  20% (6/29)   Unpacking objects:  24% (7/29)   Unpacking objects:  27% (8/29)   Unpacking objects:  31% (9/29)   Unpacking objects:  34% (10/29)   Unpacking objects:  37% (11/29)   Unpacking objects:  41% (12/29)   Unpacking objects:  44% (13/29)   Unpacking objects:  48% (14/29)   Unpacking objects:  51% (15/29)   Unpacking objects:  55% (16/29)   Unpacking objects:  58% (17/29)   Unpacking objects:  62% (18/29)   Unpacking objects:  65% (19/29)   Unpacking objects:  68% (20/29)   Unpacking objects:  72% (21/29)   Unpacking objects:  75% (22/29)   Unpacking objects:  79% (23/29)   Unpacking objects:  82% (24/29)   Unpacking objects:  86% (25/29)   Unpacking objects:  89% (26/29)   Unpacking objects:  93% (27/29)   Unpacking objects:  96% (28/29)   Unpacking objects: 100% (29/29)   Unpacking objects: 100% (29/29), done.
+From github.com:mazuma5/simple-java-maven-app
+   0d85b7e..77f3d7e  master     -> origin/master
+ * [new branch]      mazuma5-patch-1 -> origin/mazuma5-patch-1
+Updating 0d85b7e..77f3d7e
+Fast-forward
+ Jenkinsfile | 30 [32m++++++++++++++++++++++++++++++[m
+ 1 file changed, 30 insertions(+)
+ create mode 100644 Jenkinsfile
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ vi Jenkinsfile 
+[?1049h[?1h=[1;43r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[43;1H"Jenkinsfile" 30L, 603C[2;1Hpipeline {
+    agent any
+    tools {[5;9Hmaven 'maven3.6.0'[6;9Hjdk 'java1.8.0'
+    }
+    stages {[9;9Hstage('Build') {[10;13Hsteps {[11;17Hsh 'mvn -B -DskipTests clean package'[12;13H}[13;9H}[14;9Hstage('Test') {[15;13Hsteps {[16;17Hsh 'mvn test'[17;13H}[18;13Hpost {[19;17Halways {[20;21Hjunit 'target/surefire-reports/*.xml'[21;17H}[22;13H}[23;9H}[24;9Hstage('Deploy') {[25;13Hsteps {[26;17Hsh 'java -jar target/my-app-1.0-SNAPSHOT.jar'[27;13H}[28;9H}
+    }
+}
+[1m[34m~                                                                                                                            [32;1H~                                                                                                                            [33;1H~                                                                                                                            [34;1H~                                                                                                                            [35;1H~                                                                                                                            [36;1H~                                                                                                                            [37;1H~                                                                                                                            [38;1H~                                                                                                                            [39;1H~                                                                                                                            [40;1H~                                                                                                                            [41;1H~                                                                                                                            [42;1H~                                                                                                                            [1;1H[?12l[?25h[?25l[m[43;1H[K[43;1H/[?12l[?25h/[?25l[43;2H[K[43;2H[?12l[?25h [1;1H[?25l[43;1H[1m-- INSERT --[1;1H[?12l[?25h[?25l[m/[?12l[?25h[?25l/[?12l[?25h[?25la[?12l[?25h[?25lu[?12l[?25h[?25lt[?12l[?25h[?25li[?12l[?25h[?25lr[?12l[?25h[?25l[1;7H[K[1;7H[?12l[?25h[?25l[1;6H[K[1;6H[?12l[?25h[?25lh[?12l[?25h[?25lo[?12l[?25h[?25lr[?12l[?25h[?25l:[?12l[?25h[?25l [?12l[?25h[?25lA[?12l[?25h[?25lv[?12l[?25h[?25li[?12l[?25h[?25lk[?12l[?25h[?25l [?12l[?25h[?25lm[?12l[?25h[?25la[?12l[?25h[?25lz[?12l[?25h[?25lu[?12l[?25h[?25lm[?12l[?25h[?25ld[?12l[?25h[?25le[?12l[?25h[?25lr[?12l[?25h[43;1H[K[1;23H[?25l[?12l[?25h[?25l[43;1H:[?12l[?25hwq[?25l"Jenkinsfile" 30L, 626C written
+[?1l>[?12l[?25h[?1049l]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	[31mmodified:   Jenkinsfile[m
+#
+no changes added to commit (use "git add" and/or "git commit -a")
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ git add .
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	[32mmodified:   Jenkinsfile[m
+#
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ git commit -m ""U"p"d"a"t"e" "J"e"n"k"i"n"s" "[1P"f"i"l"e"
+[master 3a8a6b8] Update Jenkinsfile
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ git clobne[K[K[K[K[K[Kpush origin[C origin- originu origin[C[C[C[C[C[C[C master
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 317 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)   [Kremote: Resolving deltas:  50% (1/2)   [Kremote: Resolving deltas: 100% (2/2)   [Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To git@github.com:mazuma5/simple-java-maven-app.git
+   77f3d7e..3a8a6b8  master -> master
+Branch master set up to track remote branch master from origin.
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ tar -xvf jfmc-rpm-<version>.tar.gz
+-bash: version: No such file or directory
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ tar -xvf jfmc-rpm-<version>.tar.gz[1P.tar.gz[1P.tar.gz[1P.tar.gz[1P.tar.gz[1P.tar.gz[1P.tar.gz[1P.tar.gz[1P.tar.gz[1P.tar.gz3.tar.gz[C.tar.gz1.tar.gz
+tar: jfmc-rpm-3.1.tar.gz: Cannot open: No such file or directory
+tar: Error is not recoverable: exiting now
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ echo "export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.191.b12-1.el7_6.x86 _64" >> /etc/profile
+-bash: /etc/profile: Permission denied
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sud[K -
+Password: 
+su: Authentication failure
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ . /etc/profile
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ env | grep JAVA
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ wget https://bintray.com/jfrog/artifactory-rpms/download_file?file_path=jfrog-ar tifactory-oss-4.13.2.rpm -O jfrog-artifactory-oss-4.13.2.rpm
+--2019-03-01 11:19:17--  https://bintray.com/jfrog/artifactory-rpms/download_file?file_path=jfrog-artifactory-oss-4.13.2.rpm
+Resolving bintray.com (bintray.com)... 108.168.194.93
+Connecting to bintray.com (bintray.com)|108.168.194.93|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://dl.bintray.com/jfrog/artifactory-rpms/jfrog-artifactory-oss-4.13.2.rpm?expiry=1551439187569&signature=Cf%2BPUzETqctpd7QZ0Dm6BC8g2L1gioJaFG%2B16sPnigDm1STbTaW%2BXuhHKxCnlj%2BwJ%2Fuzb%2BGuH35jn8567AugFg%3D%3D [following]
+--2019-03-01 11:19:17--  https://dl.bintray.com/jfrog/artifactory-rpms/jfrog-artifactory-oss-4.13.2.rpm?expiry=1551439187569&signature=Cf%2BPUzETqctpd7QZ0Dm6BC8g2L1gioJaFG%2B16sPnigDm1STbTaW%2BXuhHKxCnlj%2BwJ%2Fuzb%2BGuH35jn8567AugFg%3D%3D
+Resolving dl.bintray.com (dl.bintray.com)... 52.35.172.195, 52.34.114.104
+Connecting to dl.bintray.com (dl.bintray.com)|52.35.172.195|:443... connected.
+HTTP request sent, awaiting response... 302 
+Location: https://akamai.bintray.com/92/92563a6af4512f6ff3933515e32c386f7c8089d87a9bc8687426442d45a00d3f?__gda__=exp=1551439877~hmac=ea6b3f8e3bfe1232fbc24382eaa15ce1d14fe291b7874dfa67678d81c4cb9ea9&response-content-disposition=attachment%3Bfilename%3D%22jfrog-artifactory-oss-4.13.2.rpm%22&response-content-type=application%2Fx-rpm&requestInfo=U2FsdGVkX18J92bQKzC-UI50fTyWv1gEDee7JB8EjDQNGcLsSWdUTM_Xy6de85O-G3vyv7WsxL-9BLt8pCp2su9s2Bt6mbZQ7-cr3ed-ThAevlJzD0jeL1vXYpT0TTyyazm_75r8uMxw4yF5mcFuUQ&response-X-Checksum-Sha1=4d6a24787110db98e23a67c0cab34741fcefa6b8&response-X-Checksum-Sha2=92563a6af4512f6ff3933515e32c386f7c8089d87a9bc8687426442d45a00d3f [following]
+--2019-03-01 11:19:17--  https://akamai.bintray.com/92/92563a6af4512f6ff3933515e32c386f7c8089d87a9bc8687426442d45a00d3f?__gda__=exp=1551439877~hmac=ea6b3f8e3bfe1232fbc24382eaa15ce1d14fe291b7874dfa67678d81c4cb9ea9&response-content-disposition=attachment%3Bfilename%3D%22jfrog-artifactory-oss-4.13.2.rpm%22&response-content-type=application%2Fx-rpm&requestInfo=U2FsdGVkX18J92bQKzC-UI50fTyWv1gEDee7JB8EjDQNGcLsSWdUTM_Xy6de85O-G3vyv7WsxL-9BLt8pCp2su9s2Bt6mbZQ7-cr3ed-ThAevlJzD0jeL1vXYpT0TTyyazm_75r8uMxw4yF5mcFuUQ&response-X-Checksum-Sha1=4d6a24787110db98e23a67c0cab34741fcefa6b8&response-X-Checksum-Sha2=92563a6af4512f6ff3933515e32c386f7c8089d87a9bc8687426442d45a00d3f
+Resolving akamai.bintray.com (akamai.bintray.com)... 23.199.225.184
+Connecting to akamai.bintray.com (akamai.bintray.com)|23.199.225.184|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 41384180 (39M) [application/x-rpm]
+Saving to: ‘jfrog-artifactory-oss-4.13.2.rpm’
+
+ 0% [                                                                                    ] 0           --.-K/s               0% [                                                                                    ] 413,764     1.78MB/s              3% [=>                                                                                  ] 1,317,748   2.81MB/s              4% [===>                                                                                ] 2,066,996   2.92MB/s              7% [====>                                                                               ] 2,918,044   3.17MB/s              9% [======>                                                                             ] 3,805,740   3.32MB/s             11% [========>                                                                           ] 4,823,740   3.50MB/s             13% [==========>                                                                         ] 5,756,228   3.62MB/s             15% [============>                                                                       ] 6,607,276   3.67MB/s             18% [==============>                                                                     ] 7,474,612   3.69MB/s             20% [===============>                                                                    ] 8,346,020   3.73MB/s             22% [=================>                                                                  ] 9,327,372   3.81MB/s             24% [===================>                                                                ] 10,227,284  3.83MB/s             27% [=====================>                                                              ] 11,208,636  3.85MB/s             29% [=======================>                                                            ] 12,226,636  3.89MB/s             31% [=========================>                                                          ] 13,212,060  3.91MB/s  eta 7s     34% [===========================>                                                        ] 14,193,412  3.96MB/s  eta 7s     36% [=============================>                                                      ] 15,064,820  4.10MB/s  eta 7s     38% [===============================>                                                    ] 15,997,308  4.11MB/s  eta 7s     41% [=================================>                                                  ] 16,978,660  4.20MB/s  eta 7s     43% [===================================>                                                ] 17,797,132  4.22MB/s  eta 6s     45% [=====================================>                                              ] 18,778,484  4.25MB/s  eta 6s     47% [=======================================>                                            ] 19,727,260  4.27MB/s  eta 6s     49% [========================================>                                           ] 20,582,380  4.25MB/s  eta 6s     51% [==========================================>                                         ] 21,498,580  4.24MB/s  eta 6s     54% [============================================>                                       ] 22,484,004  4.29MB/s  eta 4s     56% [==============================================>                                     ] 23,318,764  4.27MB/s  eta 4s     58% [================================================>                                   ] 24,287,900  4.27MB/s  eta 4s     61% [==================================================>                                 ] 25,269,252  4.28MB/s  eta 4s     63% [====================================================>                               ] 26,169,164  4.28MB/s  eta 4s     65% [======================================================>                             ] 27,101,652  4.29MB/s  eta 3s     67% [=======================================================>                            ] 27,985,276  4.27MB/s  eta 3s     70% [=========================================================>                          ] 28,970,700  4.29MB/s  eta 3s     72% [===========================================================>                        ] 29,809,532  4.28MB/s  eta 3s     74% [=============================================================>                      ] 30,790,884  4.28MB/s  eta 3s     76% [===============================================================>                    ] 31,739,660  4.29MB/s  eta 2s     78% [=================================================================>                  ] 32,606,996  4.28MB/s  eta 2s     81% [===================================================================>                ] 33,572,060  4.27MB/s  eta 2s     83% [=====================================================================>              ] 34,492,332  4.28MB/s  eta 2s     85% [======================================================================>             ] 35,428,892  4.28MB/s  eta 2s     87% [========================================================================>           ] 36,328,804  4.28MB/s  eta 1s     90% [==========================================================================>         ] 37,261,292  4.30MB/s  eta 1s     92% [============================================================================>       ] 38,144,916  4.29MB/s  eta 1s     94% [==============================================================================>     ] 39,081,476  4.28MB/s  eta 1s     96% [================================================================================>   ] 39,997,676  4.28MB/s  eta 1s     98% [==================================================================================> ] 40,901,660  4.28MB/s  eta 0s     100%[===================================================================================>] 41,384,180  4.28MB/s   in 9.5s   
+
+2019-03-01 11:19:28 (4.16 MB/s) - ‘jfrog-artifactory-oss-4.13.2.rpm’ saved [41384180/41384180]
+
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ rpm -ihv jfrog-artifactory-oss-4.13.2.rpm
+error: can't create transaction lock on /var/lib/rpm/.rpm.lock (Permission denied)
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo rpm -ihv jfrog-artifactory-oss-4.13.2.rpm
+Preparing...                                                            (100%)#                                 (100%)##                                (100%)###                               (100%)####                              (100%)#####                             (100%)######                            (100%)#######                           (100%)########                          (100%)#########                         (100%)##########                        (100%)###########                       (100%)############                      (100%)#############                     (100%)##############                    (100%)###############                   (100%)################                  (100%)#################                 (100%)##################                (100%)###################               (100%)####################              (100%)#####################             (100%)######################            (100%)#######################           (100%)########################          (100%)#########################         (100%)##########################        (100%)###########################       (100%)############################      (100%)#############################     (100%)##############################    (100%)###############################   (100%)################################  (100%)################################# (100%)################################# [100%]
+Checking if group artifactory exists...
+Group artifactory doesn't exist. Creating ...
+Checking if ARTIFACTORY_HOME exists
+Checking if user artifactory exists...
+User artifactory doesn't exist. Creating ...
+useradd: warning: the home directory already exists.
+Not copying any file from skel directory into it.
+Removing tomcat work directory
+Updating / installing...
+   1:jfrog-artifactory-oss-4.13.2-4028                                  (  2%)#                                 (  4%)##                                (  7%)###                               ( 10%)####                              ( 13%)#####                             ( 16%)######                            ( 19%)#######                           ( 22%)########                          ( 25%)#########                         ( 28%)##########                        ( 31%)###########                       ( 34%)############                      ( 37%)#############                     ( 40%)##############                    ( 43%)###############                   ( 46%)################                  ( 49%)#################                 ( 52%)##################                ( 55%)###################               ( 58%)####################              ( 60%)#####################             ( 63%)######################            ( 66%)#######################           ( 69%)########################          ( 72%)#########################         ( 75%)##########################        ( 78%)###########################       ( 81%)############################      ( 84%)#############################     ( 87%)##############################    ( 90%)###############################   ( 93%)################################  ( 96%)################################# ( 99%)################################# [100%]
+Adding the artifactory service to auto-start
+
+The installation of Artifactory has completed successfully.
+
+PLEASE NOTE: It is highly recommended to use Artifactory in conjunction with MySQL. You can easily configure this setup using '/opt/jfrog/artifactory/bin/configure.mysql.sh'.
+
+Checking if group artifactory exists...
+Group artifactory exists.
+Checking if ARTIFACTORY_HOME exists
+Checking if user artifactory exists...
+User artifactory exists.
+
+Note: This output shows SysV services only and does not include native
+      systemd services. SysV configuration data might be overridden by native
+      systemd configuration.
+
+      If you want to list systemd services use 'systemctl list-unit-files'.
+      To see services enabled on particular target use
+      'systemctl list-dependencies [target]'.
+
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ /opt/jfrog/artifactory/bin/configure.mysql.sh
+/opt/jfrog/artifactory/bin/configure.mysql.sh: line 18: /etc/opt/jfrog/artifactory/default: Permission denied
+
+[31m** ERROR: This tool can only be used when logged in as root.[0m
+
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ service artifactory restart
+/etc/init.d/artifactory: line 268: /etc/opt/jfrog/artifactory/default: Permission denied
+
+[31m** ERROR: ERROR: /etc/opt/jfrog/artifactory/default does not exist or not executable[0m
+
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ service artifactory restart[C[1@s[1@u[1@d[1@o[1@ 
+Artifactory Tomcat already stopped
+Starting Artifactory tomcat as user artifactory...
+Max number of open files: 32000
+Using ARTIFACTORY_HOME: /var/opt/jfrog/artifactory
+Using ARTIFACTORY_PID: /var/opt/jfrog/run/artifactory.pid
+Creating directory /var/opt/jfrog/artifactory/logs
+Creating directory /var/opt/jfrog/artifactory/logs/catalina
+Creating directory /var/opt/jfrog/artifactory/temp
+Creating directory /var/opt/jfrog/artifactory/work
+Using CATALINA_BASE:   /opt/jfrog/artifactory/tomcat
+Using CATALINA_HOME:   /opt/jfrog/artifactory/tomcat
+Using CATALINA_TMPDIR: /opt/jfrog/artifactory/tomcat/temp
+Using JRE_HOME:        /
+Using CLASSPATH:       /opt/jfrog/artifactory/tomcat/bin/bootstrap.jar:/opt/jfrog/artifactory/tomcat/bin/tomcat-juli.jar
+Using CATALINA_PID:    /var/opt/jfrog/run/artifactory.pid
+Tomcat started.
+Artifactory Tomcat started in normal mode
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ /etc/yum.repos.d/nginx.repo
+-bash: /etc/yum.repos.d/nginx.repo: No such file or directory
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ sudo /etc/yum.repos.d/nginx.repo
+sudo: /etc/yum.repos.d/nginx.repo: command not found
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ 
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ vi /etc/nginx/nginx.conf
+[?1049h[?1h=[1;43r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[43;1H"/etc/nginx/nginx.conf" [New DIRECTORY][2;1H[1m[34m~                                                                                                                            [3;1H~                                                                                                                            [4;1H~                                                                                                                            [5;1H~                                                                                                                            [6;1H~                                                                                                                            [7;1H~                                                                                                                            [8;1H~                                                                                                                            [9;1H~                                                                                                                            [10;1H~                                                                                                                            [11;1H~                                                                                                                            [12;1H~                                                                                                                            [13;1H~                                                                                                                            [14;1H~                                                                                                                            [15;1H~                                                                                                                            [16;1H~                                                                                                                            [17;1H~                                                                                                                            [18;1H~                                                                                                                            [19;1H~                                                                                                                            [20;1H~                                                                                                                            [21;1H~                                                                                                                            [22;1H~                                                                                                                            [23;1H~                                                                                                                            [24;1H~                                                                                                                            [25;1H~                                                                                                                            [26;1H~                                                                                                                            [27;1H~                                                                                                                            [28;1H~                                                                                                                            [29;1H~                                                                                                                            [30;1H~                                                                                                                            [31;1H~                                                                                                                            [32;1H~                                                                                                                            [33;1H~                                                                                                                            [34;1H~                                                                                                                            [35;1H~                                                                                                                            [36;1H~                                                                                                                            [37;1H~                                                                                                                            [38;1H~                                                                                                                            [39;1H~                                                                                                                            [40;1H~                                                                                                                            [41;1H~                                                                                                                            [42;1H~                                                                                                                            [1;1H[?12l[?25h[?25l[m[43;1H[K[43;1H:[?12l[?25hq![?25l[43;1H[K[43;1H[?1l>[?12l[?25h[?1049l]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ ps 
+  PID TTY          TIME CMD
+25090 pts/0    00:00:00 bash
+30623 pts/0    00:00:00 ps
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ ps -ef
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 05:04 ?        00:00:03 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+root         2     0  0 05:04 ?        00:00:00 [kthreadd]
+root         3     2  0 05:04 ?        00:00:00 [ksoftirqd/0]
+root         5     2  0 05:04 ?        00:00:00 [kworker/0:0H]
+root         6     2  0 05:04 ?        00:00:00 [kworker/u30:0]
+root         7     2  0 05:04 ?        00:00:00 [migration/0]
+root         8     2  0 05:04 ?        00:00:00 [rcu_bh]
+root         9     2  0 05:04 ?        00:00:00 [rcu_sched]
+root        10     2  0 05:04 ?        00:00:00 [lru-add-drain]
+root        11     2  0 05:04 ?        00:00:00 [watchdog/0]
+root        12     2  0 05:04 ?        00:00:00 [watchdog/1]
+root        13     2  0 05:04 ?        00:00:00 [migration/1]
+root        14     2  0 05:04 ?        00:00:00 [ksoftirqd/1]
+root        16     2  0 05:04 ?        00:00:00 [kworker/1:0H]
+root        18     2  0 05:04 ?        00:00:00 [kdevtmpfs]
+root        19     2  0 05:04 ?        00:00:00 [netns]
+root        20     2  0 05:04 ?        00:00:00 [xenwatch]
+root        21     2  0 05:04 ?        00:00:00 [xenbus]
+root        23     2  0 05:04 ?        00:00:00 [khungtaskd]
+root        24     2  0 05:04 ?        00:00:00 [writeback]
+root        25     2  0 05:04 ?        00:00:00 [kintegrityd]
+root        26     2  0 05:04 ?        00:00:00 [bioset]
+root        27     2  0 05:04 ?        00:00:00 [bioset]
+root        28     2  0 05:04 ?        00:00:00 [bioset]
+root        29     2  0 05:04 ?        00:00:00 [kblockd]
+root        31     2  0 05:04 ?        00:00:00 [md]
+root        32     2  0 05:04 ?        00:00:00 [edac-poller]
+root        33     2  0 05:04 ?        00:00:00 [watchdogd]
+root        38     2  0 05:04 ?        00:00:00 [kswapd0]
+root        39     2  0 05:04 ?        00:00:00 [ksmd]
+root        40     2  0 05:04 ?        00:00:00 [khugepaged]
+root        41     2  0 05:04 ?        00:00:00 [crypto]
+root        49     2  0 05:04 ?        00:00:00 [kthrotld]
+root        50     2  0 05:04 ?        00:00:00 [kworker/u30:1]
+root        51     2  0 05:04 ?        00:00:00 [kmpath_rdacd]
+root        52     2  0 05:04 ?        00:00:00 [kaluad]
+root        53     2  0 05:04 ?        00:00:00 [kpsmoused]
+root        54     2  0 05:04 ?        00:00:00 [ipv6_addrconf]
+root        67     2  0 05:04 ?        00:00:00 [deferwq]
+root       147     2  0 05:04 ?        00:00:00 [kauditd]
+root       185     2  0 05:04 ?        00:00:00 [rpciod]
+root       186     2  0 05:04 ?        00:00:00 [xprtiod]
+root       666     2  0 05:04 ?        00:00:00 [ata_sff]
+root       677     2  0 05:04 ?        00:00:00 [scsi_eh_0]
+root       687     2  0 05:04 ?        00:00:00 [scsi_tmf_0]
+root       695     2  0 05:04 ?        00:00:00 [scsi_eh_1]
+root       696     2  0 05:04 ?        00:00:00 [scsi_tmf_1]
+root      1732     2  0 05:04 ?        00:00:00 [bioset]
+root      1733     2  0 05:04 ?        00:00:00 [xfsalloc]
+root      1734     2  0 05:04 ?        00:00:00 [xfs_mru_cache]
+root      1741     2  0 05:04 ?        00:00:00 [xfs-buf/xvda1]
+root      1743     2  0 05:04 ?        00:00:00 [xfs-data/xvda1]
+root      1749     2  0 05:04 ?        00:00:00 [xfs-conv/xvda1]
+root      1752     2  0 05:04 ?        00:00:00 [xfs-cil/xvda1]
+root      1753     2  0 05:04 ?        00:00:00 [xfs-reclaim/xvd]
+root      1754     2  0 05:04 ?        00:00:00 [xfs-log/xvda1]
+root      1755     2  0 05:04 ?        00:00:00 [xfs-eofblocks/x]
+root      1756     2  0 05:04 ?        00:00:05 [xfsaild/xvda1]
+root      1757     2  0 05:04 ?        00:00:00 [kworker/0:1H]
+root      1835     1  0 05:04 ?        00:00:02 /usr/lib/systemd/systemd-journald
+root      1877     1  0 05:04 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+root      2015     1  0 05:04 ?        00:00:00 /sbin/auditd
+rpc       2512     1  0 05:04 ?        00:00:00 /sbin/rpcbind -w
+root      2536     2  0 05:04 ?        00:00:00 [ttm_swap]
+polkitd   2584     1  0 05:04 ?        00:00:00 /usr/lib/polkit-1/polkitd --no-debug
+dbus      2637     1  0 05:04 ?        00:00:00 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --syste
+chrony    2663     1  0 05:04 ?        00:00:00 /usr/sbin/chronyd
+root      2697     1  0 05:04 ?        00:00:00 /usr/sbin/gssproxy -D
+root      2749     1  0 05:04 ?        00:00:00 /usr/lib/systemd/systemd-logind
+root      2760     1  0 05:04 ?        00:00:01 /usr/sbin/irqbalance --foreground
+root      3840     1  0 05:04 ?        00:00:00 /sbin/dhclient -1 -q -lf /var/lib/dhclient/dhclient--eth0.lease -pf /var/run/
+root      3897     1  0 05:04 ?        00:00:02 /usr/bin/python2 -Es /usr/sbin/tuned -l -P
+root      4030     1  0 05:04 ?        00:00:00 /usr/libexec/postfix/master -w
+postfix   4041  4030  0 05:04 ?        00:00:00 qmgr -l -t unix -u
+root      4045     1  0 05:04 ?        00:00:00 /usr/sbin/sshd -D
+root      4050     1  0 05:04 ?        00:00:01 /usr/sbin/rsyslogd -n
+root      4061     1  0 05:04 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+root      4062     1  0 05:04 ?        00:00:00 /usr/sbin/crond -n
+root      4063     1  0 05:04 ttyS0    00:00:00 /sbin/agetty --keep-baud 115200 38400 9600 ttyS0 vt220
+root      9997     2  0 05:04 ?        00:00:00 [kworker/1:1H]
+centos   12824     1  0 05:35 ?        00:00:00 ssh-agent -s
+root     23354     2  0 07:01 ?        00:00:00 [kworker/0:2]
+jenkins  23649     1  1 07:22 ?        00:04:48 /etc/alternatives/java -Djava.awt.headless=true -DJENKINS_HOME=/var/lib/jenki
+root     25086  4045  0 09:22 ?        00:00:00 sshd: centos [priv]
+centos   25089 25086  0 09:22 ?        00:00:00 sshd: centos@pts/0
+centos   25090 25089  0 09:22 pts/0    00:00:00 -bash
+postfix  25925  4030  0 10:05 ?        00:00:00 pickup -l -t unix -u
+root     29265     2  0 11:01 ?        00:00:00 [kworker/0:1]
+root     29970     2  0 11:14 ?        00:00:00 [kworker/1:1]
+root     30234     2  0 11:19 ?        00:00:00 [kworker/1:0]
+artifac+ 30549     1 18 11:23 ?        00:00:23 //bin/java -Djava.util.logging.config.file=/opt/jfrog/artifactory/tomcat/conf
+root     30622     2  0 11:25 ?        00:00:00 [kworker/1:2]
+centos   30624 25090  0 11:25 pts/0    00:00:00 ps -ef
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ Using username "centos".
+Authenticating with public key "imported-openssh-key"
+Last login: Fri Mar  1 09:22:28 2019 from 125.22.111.162
+]0;centos@ip-10-0-1-36:~[?1034h[centos@ip-10-0-1-36 ~]$ clear
+[3;J[H[2J]0;centos@ip-10-0-1-36:~[centos@ip-10-0-1-36 ~]$ cd ~/simple-java-maven-app/
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ vi pom.xml 
+[?1049h[?1h=[1;43r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[43;1H"pom.xml" 37L, 1196C[1;1H<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>my-app</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>[12;7H<groupId>junit</groupId>[13;7H<artifactId>junit</artifactId>[14;7H<version>4.11</version>[15;7H<scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>[20;7H<plugin>[21;9H<!-- Build an executable JAR -->[22;9H<groupId>org.apache.maven.plugins</groupId>[23;9H<artifactId>maven-jar-plugin</artifactId>[24;9H<version>3.0.2</version>[25;9H<configuration>[26;11H<archive>[27;13H<manifest>[28;15H<addClasspath>true</addClasspath>[29;15H<classpathPrefix>lib/</classpathPrefix>[30;15H<mainClass>com.mycompany.app.App</mainClass>[31;13H</manifest>[32;11H</archive>[33;9H</configuration>[34;7H</plugin>
+    </plugins>
+  </build>
+</project>
+[1m[34m~                                                                                                                            [39;1H~                                                                                                                            [40;1H~                                                                                                                            [41;1H~                                                                                                                            [42;1H~                                                                                                                            [1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[m [30;2H[29;2H[28;2H[27;2H[26;2H[25;2H
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ [?25l[43;1H[1m-- INSERT --[m[43;13H[K[37;42r[37;1H[L[1;43r[37;1H[?12l[?25h[?25l<pluginRepositories>
+  <pluginRepository>
+    <id>Maven-Artifactory-Plugin</id>[39;38H[K[40;1H    <url>https://jcenter.bintray.com</url>[40;43H[K[41;1H  </pluginRepository>[41;22H[K[42;1H</pluginRepositories>[42;22H[K[42;22H[?12l[?25h[43;1H[K[42;21H[?25l[?12l[?25h[?25l
+:[?12l[?25hwq[?25l"pom.xml" 43L, 1363C written
+[?1l>[?12l[?25h[?1049l]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ artifactory
+-bash: artifactory: command not found
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ artifactoryvi pom.xml 
+[?1049h[?1h=[1;43r[?12;25h[?12l[?25h[27m[m[H[2J[?25l[43;1H"pom.xml" 43L, 1363C[1;1H<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>my-app</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>[12;7H<groupId>junit</groupId>[13;7H<artifactId>junit</artifactId>[14;7H<version>4.11</version>[15;7H<scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>[20;7H<plugin>[21;9H<!-- Build an executable JAR -->[22;9H<groupId>org.apache.maven.plugins</groupId>[23;9H<artifactId>maven-jar-plugin</artifactId>[24;9H<version>3.0.2</version>[25;9H<configuration>[26;11H<archive>[27;13H<manifest>[28;15H<addClasspath>true</addClasspath>[29;15H<classpathPrefix>lib/</classpathPrefix>[30;15H<mainClass>com.mycompany.app.App</mainClass>[31;13H</manifest>[32;11H</archive>[33;9H</configuration>[34;7H</plugin>
+    </plugins>
+  </build>
+<pluginRepositories>
+  <pluginRepository>
+    <id>Maven-Artifactory-Plugin</id>
+    <url>https://jcenter.bintray.com</url>
+  </pluginRepository>
+</pluginRepositories>[1;1H[?12l[?25h
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </plugin[?25l[43;1H[1m-- INSERT --[m[43;13H[K[35;42r[35;1H[L[1;43r[35;1H[?12l[?25h[?25l[1;42r[1;1H[11M[1;43r[24;1H<plugin>
+        <groupId>org.jfrog.buildinfo</groupId>
+        <artifactId>artifactory-maven-plugin</artifactId>
+        <version>4.13.2</version>
+        <inherited>false</inherited>
+        <exection>[29;19H[K[30;5H            <id>build-info</id>[30;36H[K[31;3H              <goals>[32;25H<goal>publish</goal>[33;17H</goals>[34;17H<configuration>[35;25H<contextUrl>http://54.191.126.24:8081/artifactory/</contextUrl>[36;25H<username>admin</username>[37;25H<password>password</password>[38;25H<repoKey>libs-release-local</repoKey>[39;25H<snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>[40;17H</configuration>[41;9H</exection>
+</plugin>[?12l[?25h[43;1H[K[42;9H[?25l[?12l[?25h[?25l
+:[?12l[?25hwq[?25l"pom.xml" 62L, 1888C written
+[?1l>[?12l[?25h[?1049l]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ gio[Kt add .
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	[32mnew file:   jfrog-artifactory-oss-4.13.2.rpm[m
+#	[32mmodified:   pom.xml[m
+#
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ git reset jfrog-artifactory-oss-4.13.2.rpm
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	[32mmodified:   pom.xml[m
+#
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	[31mjfrog-artifactory-oss-4.13.2.rpm[m
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ git commit -m ""A"d"d" "a"r"t"i"f"a"c"t"o"r"y" "d"e"t"a"u"[1P"i"l"s"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"x"m"[1P"[1P" "d"e"p"e"n"d"e"c"[1P"[1P"[1P"[1P"[1P"[1P"[1P"[1P"p"l"u"g"i"n" "p"o"m"."x"m"l"[C
+[master 7aaf68b] Add artifactory plugin pom.xml
+ 1 file changed, 25 insertions(+)
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ git co[K[Kpush -u origin master
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects:  33% (1/3)   Compressing objects:  66% (2/3)   Compressing objects: 100% (3/3)   Compressing objects: 100% (3/3), done.
+Writing objects:  33% (1/3)   Writing objects:  66% (2/3)   Writing objects: 100% (3/3)   Writing objects: 100% (3/3), 667 bytes | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/2)   [Kremote: Resolving deltas:  50% (1/2)   [Kremote: Resolving deltas: 100% (2/2)   [Kremote: Resolving deltas: 100% (2/2), completed with 2 local objects.[K
+To git@github.com:mazuma5/simple-java-maven-app.git
+   3a8a6b8..7aaf68b  master -> master
+Branch master set up to track remote branch master from origin.
+]0;centos@ip-10-0-1-36:~/simple-java-maven-app[centos@ip-10-0-1-36 simple-java-maven-app]$ 
