@@ -42,3 +42,14 @@ http://54.191.126.24:8081/
 
 
 curl -X PUT -u u:p -T target/my-app-1.0-SNAPSHOT.jar "http://localhost:8081/artifactory/libs-release-local/my-app-1.0-SNAPSHOT.jar"
+
+
+<install tomcat>
+[centos@ip-10-0-1-36 ~]$ sudo yum install tomcat
+[centos@ip-10-0-1-36 tomcat]$ sudo yum install tomcat-webapps tomcat-admin-webapps
+[centos@ip-10-0-1-36 ~]$ sudo vi /usr/share/tomcat/conf/tomcat-users.xml
+<add below line inside tomcat user>
+<user name="admin" password="adminadmin" roles="admin,manager,admin-gui,admin-script,manager-gui,manager-script,manager-jmx,manager-status" />
+[centos@ip-10-0-1-36 tomcat]$ sudo visudo <To give permission to copy to tomcat webapps folder>
+<add below line>
+jenkins ALL=(ALL) NOPASSWD: ALL
