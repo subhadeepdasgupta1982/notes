@@ -48,6 +48,11 @@ curl -X PUT -u u:p -T target/my-app-1.0-SNAPSHOT.jar "http://localhost:8081/arti
 [centos@ip-10-0-1-36 ~]$ sudo yum install tomcat
 [centos@ip-10-0-1-36 tomcat]$ sudo yum install tomcat-webapps tomcat-admin-webapps
 [centos@ip-10-0-1-36 ~]$ sudo vi /usr/share/tomcat/conf/tomcat-users.xml
+[root@ip-10-0-1-36 tomcat]# sudo systemctl enable tomcat
+[root@ip-10-0-1-36 tomcat]# sudo systemctl start tomcat
+[root@ip-10-0-1-36 tomcat]# sudo systemctl restart tomcat
+[root@ip-10-0-1-36 tomcat]# sudo systemctl status tomcat
+<change port in 'server.xml' if port conflict is there >
 <add below line inside tomcat user>
 <user name="admin" password="adminadmin" roles="admin,manager,admin-gui,admin-script,manager-gui,manager-script,manager-jmx,manager-status" />
 [centos@ip-10-0-1-36 tomcat]$ sudo visudo <To give permission to copy to tomcat webapps folder>
