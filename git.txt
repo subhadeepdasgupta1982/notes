@@ -215,5 +215,9 @@ c39d784764e0: Pushed
 d443bc70f9c5: Pushed
 6744ca1b1190: Pushed
 1.0: digest: sha256:7a9b8dbdb9f50e0a086616fcdadfe1cf7a802d030092420e488eb4c6fafa3321 size: 1788
+sudo docker logs -f myjenkins
+
+to check os type in unix
+cat /etc/os-release
 
 
