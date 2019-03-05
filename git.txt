@@ -184,4 +184,15 @@ docker image creation:
 https://docs.docker.com/get-started/part2/
 
 
+[centos@ip-10-0-1-147 project]$ sudo docker run -d -p 9001:80 friendlyhello
+94d801db9d218098842f2957f145a1ba78c4aa315c1991525389d5d17ccd7781
+[centos@ip-10-0-1-147 project]$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                  NAMES
+94d801db9d21        friendlyhello       "python app.py"     41 seconds ago      Up 40 seconds       0.0.0.0:9001->80/tcp   hardcore_swartz
+[centos@ip-10-0-1-147 project]$ sudo docker exec -it 94d801db9d21 /bin/bash
+root@94d801db9d21:/app# ls
+Dockerfile  app.py  requirement.txt
+root@94d801db9d21:/app# exit
+exit
+[centos@ip-10-0-1-147 project]$
 
