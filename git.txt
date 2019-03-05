@@ -221,3 +221,187 @@ to check os type in unix
 cat /etc/os-release
 
 
+Using username "centos".
+Authenticating with public key "imported-openssh-key"
+Last login: Tue Mar  5 09:14:48 2019 from 125.22.111.162
+[centos@ip-10-0-1-147 ~]$ cd jenkins
+-bash: cd: jenkins: No such file or directory
+[centos@ip-10-0-1-147 ~]$ ls -ltr
+total 0
+drwxrwxr-x. 2 centos centos 61 Mar  5 06:45 project
+-rw-rw-r--. 1 centos centos  0 Mar  5 10:13 Dockerfile
+drwxrwxr-x. 2 centos centos 65 Mar  5 11:30 jenkinsapp
+[centos@ip-10-0-1-147 ~]$ cd jenkinsapp
+[centos@ip-10-0-1-147 jenkinsapp]$ ls -ltr
+total 4
+-rw-rw-r--. 1 centos centos 1317 Mar  5 10:56 Dockerfile
+-rw-rw-r--. 1 centos centos    0 Mar  5 11:23 dockerfile
+[centos@ip-10-0-1-147 jenkinsapp]$ touch plugin.txt
+[centos@ip-10-0-1-147 jenkinsapp]$ vi plugin.txt
+[centos@ip-10-0-1-147 jenkinsapp]$ vi pulgin.txt
+[centos@ip-10-0-1-147 jenkinsapp]$ vi Dockerfile
+[centos@ip-10-0-1-147 jenkinsapp]$ sudo docker build --tag=jenkinsnewapp .
+Sending build context to Docker daemon  17.92kB
+Step 1/9 : FROM jenkins
+ ---> cd14cecfdb3a
+Step 2/9 : USER root
+ ---> Using cache
+ ---> 7d21a1c77179
+Step 3/9 : RUN apt-get update     && apt-get -y install         apt-transport-ht                                                                             tps         ca-certificates         curl         software-properties-common
+ ---> Using cache
+ ---> 801ddf0004e0
+Step 4/9 : RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key                                                                              add -     && echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu xe                                                                             nial stable" >> /etc/apt/sources.list.d/additional-repositories.list     && echo                                                                              "deb http://ftp-stud.hs-esslingen.de/ubuntu xenial main restricted universe mul                                                                             tiverse" >> /etc/apt/sources.list.d/official-package-repositories.list     && ap                                                                             t-key adv --keyserver keyserver.ubuntu.com --recv-keys 437D05B5     && apt-get u                                                                             pdate
+ ---> Using cache
+ ---> ca087698bfcd
+Step 5/9 : RUN apt-get -y install docker-ce
+ ---> Using cache
+ ---> 7c683ef5bbea
+Step 6/9 : RUN curl -L https://github.com/docker/compose/releases/download/1.16.                                                                             1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose     && c                                                                             hmod +x /usr/local/bin/docker-compose
+ ---> Using cache
+ ---> d0e0c7442e8e
+Step 7/9 : RUN usermod -aG docker jenkins
+ ---> Using cache
+ ---> f113a57592a5
+Step 8/9 : RUN /usr/local/bin/install-plugins.sh < pulgin.txt
+ ---> Running in 4afb2dff03da
+/bin/sh: 1: cannot open pulgin.txt: No such file
+The command '/bin/sh -c /usr/local/bin/install-plugins.sh < pulgin.txt' returned                                                                              a non-zero code: 2
+[centos@ip-10-0-1-147 jenkinsapp]$ ls -lrt
+total 8
+-rw-rw-r--. 1 centos centos    0 Mar  5 11:23 dockerfile
+-rw-rw-r--. 1 centos centos    0 Mar  5 12:21 plugin.txt
+-rw-rw-r--. 1 centos centos   17 Mar  5 12:34 pulgin.txt
+-rw-rw-r--. 1 centos centos 1368 Mar  5 12:36 Dockerfile
+[centos@ip-10-0-1-147 jenkinsapp]$ vi plugin.txt
+[centos@ip-10-0-1-147 jenkinsapp]$ vi pulgin.txt
+[centos@ip-10-0-1-147 jenkinsapp]$ vi plugin.txt
+[centos@ip-10-0-1-147 jenkinsapp]$ vi Dockerfile
+[centos@ip-10-0-1-147 jenkinsapp]$ sudo docker build --tag=jenkinsnewapp .
+Sending build context to Docker daemon  18.43kB
+Step 1/9 : FROM jenkins
+ ---> cd14cecfdb3a
+Step 2/9 : USER root
+ ---> Using cache
+ ---> 7d21a1c77179
+Step 3/9 : RUN apt-get update     && apt-get -y install         apt-transport-ht                                                                             tps         ca-certificates         curl         software-properties-common
+ ---> Using cache
+ ---> 801ddf0004e0
+Step 4/9 : RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key                                                                              add -     && echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu xe                                                                             nial stable" >> /etc/apt/sources.list.d/additional-repositories.list     && echo                                                                              "deb http://ftp-stud.hs-esslingen.de/ubuntu xenial main restricted universe mul                                                                             tiverse" >> /etc/apt/sources.list.d/official-package-repositories.list     && ap                                                                             t-key adv --keyserver keyserver.ubuntu.com --recv-keys 437D05B5     && apt-get u                                                                             pdate
+ ---> Using cache
+ ---> ca087698bfcd
+Step 5/9 : RUN apt-get -y install docker-ce
+ ---> Using cache
+ ---> 7c683ef5bbea
+Step 6/9 : RUN curl -L https://github.com/docker/compose/releases/download/1.16.                                                                             1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose     && c                                                                             hmod +x /usr/local/bin/docker-compose
+ ---> Using cache
+ ---> d0e0c7442e8e
+Step 7/9 : RUN usermod -aG docker jenkins
+ ---> Using cache
+ ---> f113a57592a5
+Step 8/9 : RUN /usr/local/bin/install-plugins.sh < plugin.txt
+ ---> Running in e6009f0bcbe8
+/bin/sh: 1: cannot open plugin.txt: No such file
+The command '/bin/sh -c /usr/local/bin/install-plugins.sh < plugin.txt' returned                                                                              a non-zero code: 2
+[centos@ip-10-0-1-147 jenkinsapp]$ vi Dockerfile
+[centos@ip-10-0-1-147 jenkinsapp]$ sudo docker build --tag=jenkinsnewapp .
+Sending build context to Docker daemon  18.43kB
+Step 1/11 : FROM jenkins
+ ---> cd14cecfdb3a
+Step 2/11 : USER root
+ ---> Using cache
+ ---> 7d21a1c77179
+Step 3/11 : RUN apt-get update     && apt-get -y install         apt-transport-h                                                                             ttps         ca-certificates         curl         software-properties-common
+ ---> Using cache
+ ---> 801ddf0004e0
+Step 4/11 : RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-ke                                                                             y add -     && echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu x                                                                             enial stable" >> /etc/apt/sources.list.d/additional-repositories.list     && ech                                                                             o "deb http://ftp-stud.hs-esslingen.de/ubuntu xenial main restricted universe mu                                                                             ltiverse" >> /etc/apt/sources.list.d/official-package-repositories.list     && a                                                                             pt-key adv --keyserver keyserver.ubuntu.com --recv-keys 437D05B5     && apt-get                                                                              update
+ ---> Using cache
+ ---> ca087698bfcd
+Step 5/11 : RUN apt-get -y install docker-ce
+ ---> Using cache
+ ---> 7c683ef5bbea
+Step 6/11 : RUN curl -L https://github.com/docker/compose/releases/download/1.16                                                                             .1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose     &&                                                                              chmod +x /usr/local/bin/docker-compose
+ ---> Using cache
+ ---> d0e0c7442e8e
+Step 7/11 : RUN usermod -aG docker jenkins
+ ---> Using cache
+ ---> f113a57592a5
+Step 8/11 : WORKDIR /app
+ ---> Running in 32cb3672cc19
+Removing intermediate container 32cb3672cc19
+ ---> 4a56e54f5872
+Step 9/11 : COPY plugin.txt /app
+ ---> 8a79cd4238f3
+Step 10/11 : RUN /usr/local/bin/install-plugins.sh < plugin.txt
+ ---> Running in 82437a14909d
+Creating initial locks...
+Analyzing war...
+Downloading plugins...
+Downloading plugin: git from https://updates.jenkins.io/download/plugins/git/lat                                                                             est/git.hpi
+Downloading plugin: maven-plugin from https://updates.jenkins.io/download/plugin                                                                             s/maven-plugin/latest/maven-plugin.hpi
+ > git depends on workflow-scm-step:2.4,workflow-step-api:2.10,credentials:2.1.1                                                                             4,git-client:2.7.0,mailer:1.18,matrix-project:1.7.1,parameterized-trigger:2.33;r                                                                             esolution:=optional,promoted-builds:2.27;resolution:=optional,scm-api:2.2.0,ssh-                                                                             credentials:1.13,structs:1.10,token-macro:1.12.1;resolution:=optional
+Downloading plugin: workflow-scm-step from https://updates.jenkins.io/download/p                                                                             lugins/workflow-scm-step/latest/workflow-scm-step.hpi
+Downloading plugin: workflow-step-api from https://updates.jenkins.io/download/p                                                                             lugins/workflow-step-api/latest/workflow-step-api.hpi
+Downloading plugin: credentials from https://updates.jenkins.io/download/plugins                                                                             /credentials/latest/credentials.hpi
+Downloading plugin: git-client from https://updates.jenkins.io/download/plugins/                                                                             git-client/latest/git-client.hpi
+Downloading plugin: mailer from https://updates.jenkins.io/download/plugins/mail                                                                             er/latest/mailer.hpi
+Downloading plugin: matrix-project from https://updates.jenkins.io/download/plug                                                                             ins/matrix-project/latest/matrix-project.hpi
+Skipping optional dependency parameterized-trigger
+Skipping optional dependency promoted-builds
+Downloading plugin: scm-api from https://updates.jenkins.io/download/plugins/scm                                                                             -api/latest/scm-api.hpi
+Downloading plugin: ssh-credentials from https://updates.jenkins.io/download/plu                                                                             gins/ssh-credentials/latest/ssh-credentials.hpi
+Skipping optional dependency token-macro
+Downloading plugin: structs from https://updates.jenkins.io/download/plugins/str                                                                             ucts/latest/structs.hpi
+ > workflow-scm-step depends on workflow-step-api:2.9
+ > matrix-project depends on junit:1.20,script-security:1.13
+Downloading plugin: junit from https://updates.jenkins.io/download/plugins/junit                                                                             /latest/junit.hpi
+Downloading plugin: script-security from https://updates.jenkins.io/download/plu                                                                             gins/script-security/latest/script-security.hpi
+ > workflow-step-api depends on structs:1.17
+ > ssh-credentials depends on credentials:2.1.17
+ > mailer depends on display-url-api:1.0
+ > scm-api depends on structs:1.9
+Downloading plugin: display-url-api from https://updates.jenkins.io/download/plu                                                                             gins/display-url-api/latest/display-url-api.hpi
+ > junit depends on workflow-api:2.22,workflow-step-api:2.12,script-security:1.3                                                                             0,structs:1.7
+Downloading plugin: workflow-api from https://updates.jenkins.io/download/plugin                                                                             s/workflow-api/latest/workflow-api.hpi
+ > credentials depends on structs:1.7
+ > workflow-api depends on workflow-step-api:2.16,scm-api:2.2.6,structs:1.17
+ > maven-plugin depends on apache-httpcomponents-client-4-api:4.5.3-2.1,javadoc:                                                                             1.0,jsch:0.1.54.2,junit:1.6,mailer:1.7,token-macro:1.10;resolution:=optional
+Downloading plugin: apache-httpcomponents-client-4-api from https://updates.jenk                                                                             ins.io/download/plugins/apache-httpcomponents-client-4-api/latest/apache-httpcom                                                                             ponents-client-4-api.hpi
+Downloading plugin: javadoc from https://updates.jenkins.io/download/plugins/jav                                                                             adoc/latest/javadoc.hpi
+Downloading plugin: jsch from https://updates.jenkins.io/download/plugins/jsch/l                                                                             atest/jsch.hpi
+Skipping optional dependency token-macro
+ > git-client depends on apache-httpcomponents-client-4-api:4.5.3-2.0,credential                                                                             s:2.1.13,jsch:0.1.54.1,ssh-credentials:1.13,structs:1.9
+ > jsch depends on ssh-credentials:1.14
+
+WAR bundled plugins:
+
+
+Installed plugins:
+apache-httpcomponents-client-4-api:4.5.5-3.0
+credentials:2.1.18
+display-url-api:2.3.0
+git-client:2.7.6
+git:3.9.3
+javadoc:1.4
+jsch:0.1.55
+junit:1.27
+mailer:1.23
+matrix-project:1.13
+maven-plugin:3.2
+scm-api:2.3.0
+script-security:1.53
+ssh-credentials:1.14
+structs:1.17
+workflow-api:2.33
+workflow-scm-step:2.7
+workflow-step-api:2.19
+Cleaning up locks
+Removing intermediate container 82437a14909d
+ ---> 3a31f0f5a7f4
+Step 11/11 : USER jenkins
+ ---> Running in a4d69c18ec4b
+Removing intermediate container a4d69c18ec4b
+ ---> 146a082a5059
+Successfully built 146a082a5059
+Successfully tagged jenkinsnewapp:latest
+[centos@ip-10-0-1-147 jen
+
