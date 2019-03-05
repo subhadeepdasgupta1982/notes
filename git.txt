@@ -62,4 +62,16 @@ jenkins ALL=(ALL) NOPASSWD: ALL
 Docker we need to follow below link:
 https://docs.docker.com/install/linux/docker-ce/centos/
 
+[centos@ip-10-0-1-147 ~]$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              fce289e99eb9        2 months ago        1.84kB
+[centos@ip-10-0-1-147 ~]$ sudo docker images -ps
+unknown shorthand flag: 'p' in -ps
+See 'docker images --help'.
+[centos@ip-10-0-1-147 ~]$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+[centos@ip-10-0-1-147 ~]$ sudo docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS                      PORTS               NAMES
+c883c9c50bbf        hello-world         "/hello"            2 minutes ago       Exited (0) 2 minutes ago                        sharp_mestorf
+e69dd1e2384c        hello-world         "/hello"            19 minutes ago      Exited (0) 19 minutes ago                       romantic_ramanujan
 
