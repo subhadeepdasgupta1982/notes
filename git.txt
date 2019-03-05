@@ -196,3 +196,24 @@ root@94d801db9d21:/app# exit
 exit
 [centos@ip-10-0-1-147 project]$
 
+[centos@ip-10-0-1-147 project]$ sudo docker tag friendlyhello deepdasgupta231182/friendlyhello:1.0
+[centos@ip-10-0-1-147 project]$ sudo docker images
+REPOSITORY                         TAG                 IMAGE ID            CREATED             SIZE
+deep/get-started                   deep1               6153392a2eac        44 minutes ago      131MB
+deepdasgupta231182/friendlyhello   1.0                 6153392a2eac        44 minutes ago      131MB
+friendlyhello                      latest              6153392a2eac        44 minutes ago      131MB
+subha/new                          subha               6153392a2eac        44 minutes ago      131MB
+python                             2.7-slim            8559620b5b0d        7 hours ago         120MB
+hello-world                        latest              fce289e99eb9        2 months ago        1.84kB
+[centos@ip-10-0-1-147 project]$ sudo docker push deepdasgupta231182/friendlyhello
+The push refers to repository [docker.io/deepdasgupta231182/friendlyhello]
+c32a816c18de: Pushed
+ed626439f4f6: Pushed
+1ccc8d28f269: Pushed
+c39d784764e0: Pushed
+4bad4dc0f0f2: Pushed
+d443bc70f9c5: Pushed
+6744ca1b1190: Pushed
+1.0: digest: sha256:7a9b8dbdb9f50e0a086616fcdadfe1cf7a802d030092420e488eb4c6fafa3321 size: 1788
+
+
