@@ -58,3 +58,6 @@ curl -X PUT -u u:p -T target/my-app-1.0-SNAPSHOT.jar "http://localhost:8081/arti
 [centos@ip-10-0-1-36 tomcat]$ sudo visudo <To give permission to copy to tomcat webapps folder>
 <add below line>
 jenkins ALL=(ALL) NOPASSWD: ALL
+
+Docker we need to follow below link:
+https://docs.docker.com/install/linux/docker-ce/centos/
