@@ -61,3 +61,5 @@ jenkins ALL=(ALL) NOPASSWD: ALL
 
 Docker we need to follow below link:
 https://docs.docker.com/install/linux/docker-ce/centos/
+
+
