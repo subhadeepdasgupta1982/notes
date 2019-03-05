@@ -75,3 +75,110 @@ CONTAINER ID        IMAGE               COMMAND             CREATED             
 c883c9c50bbf        hello-world         "/hello"            2 minutes ago       Exited (0) 2 minutes ago                        sharp_mestorf
 e69dd1e2384c        hello-world         "/hello"            19 minutes ago      Exited (0) 19 minutes ago                       romantic_ramanujan
 
+drwxrwxr-x. 2 centos centos 6 Mar  5 06:38 project
+[centos@ip-10-0-1-147 ~]$ cd project
+[centos@ip-10-0-1-147 project]$ touch requirement.txt
+[centos@ip-10-0-1-147 project]$ vi requirement.txt
+[centos@ip-10-0-1-147 project]$ touch app.py
+[centos@ip-10-0-1-147 project]$ vi app.py
+[centos@ip-10-0-1-147 project]$ vi app.py
+[centos@ip-10-0-1-147 project]$ vi requirement.txt
+[centos@ip-10-0-1-147 project]$ touch Dockerfile
+[centos@ip-10-0-1-147 project]$ vi Dockerfile
+[centos@ip-10-0-1-147 project]$ ls -ltr
+total 12
+-rw-rw-r--. 1 centos centos 665 Mar  5 06:41 app.py
+-rw-rw-r--. 1 centos centos  12 Mar  5 06:42 requirement.txt
+-rw-rw-r--. 1 centos centos 513 Mar  5 06:43 Dockerfile
+[centos@ip-10-0-1-147 project]$ vi Dockerfile
+[centos@ip-10-0-1-147 project]$ vi Dockerfile
+[centos@ip-10-0-1-147 project]$ sudo docker build --tag=friendlyhello .
+Sending build context to Docker daemon  4.608kB
+Step 1/7 : FROM python:2.7-slim
+2.7-slim: Pulling from library/python
+f7e2b70d04ae: Pull complete
+1e9214730e83: Pull complete
+5bd4ec081f7b: Pull complete
+be26b369a1e7: Pull complete
+Digest: sha256:27292a8d8c04cf10aeb3fb183cfddbd4c7e90b938217cb6e53e82aa943a43f40
+Status: Downloaded newer image for python:2.7-slim
+ ---> 8559620b5b0d
+Step 2/7 : WORKDIR /app
+ ---> Running in 85a8d41f3e17
+Removing intermediate container 85a8d41f3e17
+ ---> 6e29927e38ce
+Step 3/7 : COPY . /app
+ ---> b7530fd92909
+Step 4/7 : RUN pip install --trusted-host pypi.python.org -r requirement.txt
+ ---> Running in 590a42638a39
+DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won't be maintained after that date. A future version of pip will drop support for Python 2.7.
+Collecting Flask (from -r requirement.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/7f/e7/08578774ed4536d3242b14dacb4696386634607af824ea997202cd0edb4b/Flask-1.0.2-py2.py3-none-any.whl (91kB)
+Collecting Redis (from -r requirement.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/d0/8b/c43ef27d02382853b22c49bc41a8389e47d60811dd1d72b9a45bc905a5f8/redis-3.2.0-py2.py3-none-any.whl (65kB)
+Collecting itsdangerous>=0.24 (from Flask->-r requirement.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting Jinja2>=2.10 (from Flask->-r requirement.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/7f/ff/ae64bacdfc95f27a016a7bed8e8686763ba4d277a78ca76f32659220a731/Jinja2-2.10-py2.py3-none-any.whl (126kB)
+Collecting Werkzeug>=0.14 (from Flask->-r requirement.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/20/c4/12e3e56473e52375aa29c4764e70d1b8f3efa6682bef8d0aae04fe335243/Werkzeug-0.14.1-py2.py3-none-any.whl (322kB)
+Collecting click>=5.1 (from Flask->-r requirement.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81kB)
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.10->Flask->-r requirement.txt (line 1))
+  Downloading https://files.pythonhosted.org/packages/fb/40/f3adb7cf24a8012813c5edb20329eb22d5d8e2a0ecf73d21d6b85865da11/MarkupSafe-1.1.1-cp27-cp27mu-manylinux1_x86_64.whl
+Installing collected packages: itsdangerous, MarkupSafe, Jinja2, Werkzeug, click, Flask, Redis
+Successfully installed Flask-1.0.2 Jinja2-2.10 MarkupSafe-1.1.1 Redis-3.2.0 Werkzeug-0.14.1 click-7.0 itsdangerous-1.1.0
+Removing intermediate container 590a42638a39
+ ---> b4a209d69b1d
+Step 5/7 : EXPOSE 80
+ ---> Running in 41968bd1b48f
+Removing intermediate container 41968bd1b48f
+ ---> 594bae17d7ec
+Step 6/7 : ENV NAME World
+ ---> Running in 3eaf813a8ad4
+Removing intermediate container 3eaf813a8ad4
+ ---> 4f8713dbe602
+Step 7/7 : CMD ["python", "app.py"]
+ ---> Running in be04689cb7f7
+Removing intermediate container be04689cb7f7
+ ---> 6153392a2eac
+Successfully built 6153392a2eac
+Successfully tagged friendlyhello:latest
+[centos@ip-10-0-1-147 project]$ sudo docker image
+
+Usage:  docker image COMMAND
+
+Manage images
+
+Commands:
+  build       Build an image from a Dockerfile
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Display detailed information on one or more images
+  load        Load an image from a tar archive or STDIN
+  ls          List images
+  prune       Remove unused images
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rm          Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+
+Run 'docker image COMMAND --help' for more information on a command.
+[centos@ip-10-0-1-147 project]$ sudo docker image ls
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+friendlyhello       latest              6153392a2eac        2 minutes ago       131MB
+python              2.7-slim            8559620b5b0d        7 hours ago         120MB
+hello-world         latest              fce289e99eb9        2 months ago        1.84kB
+[centos@ip-10-0-1-147 project]$ sudo docker run -p 9001:80 friendlyhello
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+125.22.111.162 - - [05/Mar/2019 07:10:33] "GET / HTTP/1.1" 200 -
+125.22.111.162 - - [05/Mar/2019 07:10:33] "GET /favicon.ico HTTP/1.1" 404 -
+
+
+
