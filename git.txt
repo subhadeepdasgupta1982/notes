@@ -405,3 +405,6 @@ Successfully built 146a082a5059
 Successfully tagged jenkinsnewapp:latest
 [centos@ip-10-0-1-147 jen
 
+docker run important commant which need to use
+sudo docker run --name=jenkins-node-new -v /var/run/docker.sock:/var/run/docker.sock -d -p 8080:8080 custom-jenkins
+
